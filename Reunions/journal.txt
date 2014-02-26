@@ -1,0 +1,20 @@
+Thu Feb 13 17:00:11 CET 2014
+
+A faire:
+- Organisation du dépot GIT.
+- Séparer "manuel d'utilisateur" et "spécification technique".
+- Manuel d'utilisateur
+- Premières expérimentations
+- Première liste de problèmes techniques que vous prévoyiez.
+
+Thu Feb  6 16:39:50 CET 2014
+
+Premiers objectifs :
+- Quel logiciel on veut construire?
+- Comprendre les difficultés techniques.
+
+A faire:
+- Organisation du dépot GIT.
+- Manuel d'utilisateur
+- Installer l'environnement de dev.
+
