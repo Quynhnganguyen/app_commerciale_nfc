@@ -1,0 +1,11 @@
+Liste des problèmes techniques prévus:
+- Intégration de la technologie NFC dans l'application
+- Mettre des informations sur la carte NFC
+- Créer une base de données sur le téléphone
+- Gestion du Webservice: 
+	*permettre l'accès au Webservice aux magasins mais pas aux clients 
+	*le WebService doit pouvoir communiquer avec l'application
+- Connecter la base de données du téléphone avec le Webservice
+- Mettre l'application sur le téléphone
+
+

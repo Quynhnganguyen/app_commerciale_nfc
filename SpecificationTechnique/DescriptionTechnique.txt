@@ -1,0 +1,45 @@
+Nom de l'application:
+Application Commerciale avec NFC
+
+Créateurs de l'application:
+-NGUYEN Thi Quynh Nga
+-THIMON Cynthia
+
+Logiciel utilisé:
+-Eclipse
+
+Outils:
+-2 Téléphones mobiles utilisant Android et NFC
+-3 cartes NFC
+
+- Description générale de l'application:
+
+Il s'agit d'une application qui permet à un client de scanner des
+produits via NFC puis de les comparer, les ajouter à ses produits
+favoris ou les ajouter à sa liste noire de produits. Les clients
+peuvent aussi créer leur liste de courses à faire. Les magasins, quant
+à eux, peuvent alimenter la base de données produits.
+
+Qu'est que NFC?:
+
+C'est une technologie de communication sans-fil à courte portée et
+haute fréquence, permettant l'échange d'informations entre des
+périphériques jusqu'à une distance d'environ 10 cm.
+
+Comment va-t-on utiliser la techologie NFC?:
+
+On va stocker sur nos cartes NFC des données concernant les
+produits. Ces données seront introduites sur les cartes grâce à de
+simples fichiers textes.
+
+Langages utilisés:
+-Pour l'application générale => Java Android
+-Pour la base de données produits => SQL, Php, Html
+-Pour la base de données clients => SQLite
+
+Décomposition interne de l'application:
+(voir diagramme de classe, et schémas bdd)
+-l'application principale
+-une base de données produits qui contiendra les produits de tous les magasins
+-une base de données client sur laquelle seront stockées la liste noire, celle de produits favoris, celle de produits à acheter ainsi que l'historique des listes de courses déjà faites
+
