@@ -1,0 +1,78 @@
+Nom de l'application:
+Application Commerciale avec NFC
+
+Créateurs de l'application:
+-NGUYEN Thi Quynh Nga
+-THIMON Cynthia
+
+- Description générale de l'application:
+
+Il s'agit d'une application qui permet à un client de scanner des
+produits via NFC puis de les comparer, les ajouter à ses produits
+favoris ou les ajouter à sa liste noire de produits. Les clients
+peuvent aussi créer leur liste de courses à faire. Les magasins, quant
+à eux, peuvent alimenter la base de données produits.
+
+Qu'est que NFC?:
+
+C'est une technologie de communication sans-fil à courte portée et
+haute fréquence, permettant l'échange d'informations entre des
+périphériques jusqu'à une distance d'environ 10 cm.
+
+
+Description détaillée des fonctionnalités d'un client:
+
+- Un client peut scanner un produit (un produit est dans notre projet
+  considéré comme une carte NFC)
+
+- Un client peut choisir de mettre un produit scanné dans sa liste de
+  produits favoris
+
+- Un client, peut à tout moment supprimer un produit de sa liste de
+  produits favoris
+
+- Un client peut choisir de mettre un produit scanné dans sa liste
+ noire
+
+-Un client, peut à tout moment supprimer un produit de sa liste noire
+
+-Un client peut ajouter un produit scanné à sa liste de produits à
+ acheter
+
+- Un client peut, lorsqu'il fait ses courses, valider au fur et à
+ mesure les produits qu'il a mis dans son caddie
+
+- Quand le client a fini ses courses il peut valider sa liste de
+ produits à acheter et par la suite il pourra consulter l'historique
+ des courses déjà faites
+
+- Un client, peut à tout moment supprimer un produit de sa liste de
+  produits à acheter
+
+- Un client peut comparer les produits par rapport à/aux:
+        * la source (concrètement où le produit a-t-il été fabriqué)
+        * le prix réel du produit( le moins cher)
+        * lipides (produit le moins gras)
+        * glucides (produit le moins sucré)
+        * la rentabilité par rapport au poids,au litre...(Il s'agit de
+         comparer le rapport entre le poids et le prix de chaque
+         produit, Exemple: comparer un lot de trois sachets de 75g de
+         fromage et un unique sachet de 200g de fromage)
+
+- Options: un client peut partager ses listes par email
+
+Description détaillée des fonctionnalités des webservices pour les magasins:
+- Un magasin peut se connecter à l'application
+- Un magasin peut rajouter un produit à la base de données principale de produits
+- Un magasin peut supprimer un produit de la base de données principale de produits
+
+
+
+
+
+
+
+
+
+
+
