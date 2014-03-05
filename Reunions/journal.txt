@@ -1,3 +1,22 @@
+Thu Feb 27 17:40:46 CET 2014
+
+A faire:
+- Decider d'une techno pour le stockage de la BDD.
+  -> Webservice en Java à préciser.
+  Un prototype?
+
+- Architecture avec les packages et leurs dépendances.
+  (2 niveaux : paquets et sous-paquets)
+- Dans chaque sous-paquet, les classes principales.
+  (les classes abstraites et leur relation)
+
+Fait:
+x Expérience avec Android: Hello world
+x Installer l'appli sur le téléphone
+- Etudier les technologies qui existent pour l'accès à distance de la bdd
+- Envoyer un mail à Mr Regis-Gianas pour le pb git
+
+
 Thu Feb 20 17:20:11 CET 2014
 A faire:
 - Expérience avec Android: Hello world
