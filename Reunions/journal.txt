@@ -1,3 +1,9 @@
+6/3/2014
+A faire
+- une mini application android : deux écrans. E1: liste + zone saisie, E2: resultat saisie+selection? Navigation de l'un à l'autre par bouton
+- tester écriture d'un WS qui correspond à requêtes BDD.
+- description: quelles données seront manipulées par quel écran, connexion BDD,..
+
 Thu Feb 27 17:40:46 CET 2014
 
 A faire:
