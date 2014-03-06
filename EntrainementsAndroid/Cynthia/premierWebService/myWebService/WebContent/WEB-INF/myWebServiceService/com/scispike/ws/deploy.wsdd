@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from myWebServiceService WSDL service -->
+
+  <service name="myWebService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.scispike.com"/>
+      <parameter name="wsdlServiceElement" value="myWebServiceService"/>
+      <parameter name="schemaQualified" value="http://ws.scispike.com"/>
+      <parameter name="wsdlServicePort" value="myWebService"/>
+      <parameter name="className" value="com.scispike.ws.myWebService"/>
+      <parameter name="wsdlPortType" value="myWebService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://ws.scispike.com" xmlns:retNS="http://ws.scispike.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="whatIsTheAnswer" qname="operNS:whatIsTheAnswer" returnQName="retNS:whatIsTheAnswerReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ws.scispike.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:interviewer" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="whatIsTheAnswer"/>
+
+  </service>
+</deployment>
