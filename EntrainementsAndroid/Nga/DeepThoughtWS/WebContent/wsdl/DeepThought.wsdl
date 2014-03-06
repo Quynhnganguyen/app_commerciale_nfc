@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.first.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.first.com" xmlns:intf="http://ws.first.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.first.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="whatIsTheAnswer">
+    <complexType>
+     <sequence>
+      <element name="interviewer" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="whatIsTheAnswerResponse">
+    <complexType>
+     <sequence>
+      <element name="whatIsTheAnswerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="whatIsTheAnswerResponse">
+
+      <wsdl:part element="impl:whatIsTheAnswerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="whatIsTheAnswerRequest">
+
+      <wsdl:part element="impl:whatIsTheAnswer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DeepThought">
+
+      <wsdl:operation name="whatIsTheAnswer">
+
+         <wsdl:input message="impl:whatIsTheAnswerRequest" name="whatIsTheAnswerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:whatIsTheAnswerResponse" name="whatIsTheAnswerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DeepThoughtSoapBinding" type="impl:DeepThought">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="whatIsTheAnswer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="whatIsTheAnswerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="whatIsTheAnswerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DeepThoughtService">
+
+      <wsdl:port binding="impl:DeepThoughtSoapBinding" name="DeepThought">
+
+         <wsdlsoap:address location="http://localhost:8080/DeepThoughtWS/services/DeepThought"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
