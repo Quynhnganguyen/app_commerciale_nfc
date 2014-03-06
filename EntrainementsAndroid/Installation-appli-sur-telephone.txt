@@ -1,0 +1,8 @@
+Pour installer l'application sur le téléphone il faut 
+*aller dans les paramètres du téléphone et faire:
+    -Option pour les développeurs -> Vérifier que "debogage USB" est coché
+    -Sécurité -> Vérifier que "Source inconnues" est coché
+*Il faut brancher le téléphone à l'ordinateur via un câble usb 
+*Lancer l'application
+
+Et voilà l'application est sur le téléphone
