@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TestsWidgets</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="checkBox1">checkBox1</string>
+    <string name="button1">button1</string>
+    <string name="texte">texte</string>
+    <string name="rb1">rb1</string>
+    <string name="rb2">rb2</string>
+    <string name="rb3">rb3</string>
+    <string name="rb4">rb4</string>
+
+</resources>
