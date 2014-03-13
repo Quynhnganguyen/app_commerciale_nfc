@@ -1,3 +1,7 @@
+13/03/2014
+A faire:
+-créer interface WS de l'application
+
 6/3/2014
 A faire
 - une mini application android : deux écrans. E1: liste + zone saisie, E2: resultat saisie+selection? Navigation de l'un à l'autre par bouton
