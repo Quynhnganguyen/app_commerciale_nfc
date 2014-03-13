@@ -1,0 +1,10 @@
+Nom mockup 			Tables associées
+
+connexion			Client
+catalogueDesMagasins		Magasins,Produits,
+listesDesMagasins		Magasins, Franchise
+informationsProduit		Produit,Type_de_produit,Source,Franchise
+scannerProduit			Produit,NFC_Tag, Type_de_produit,Source,Franchise
+comparaison			Produit,NFC_Tag, (parfois Type_de_produit et Source)
+resultatComparaison		Produit,Liste_Produits_A_Acheter
+listedeProduitsAAcheter		Liste_Produits_A_Acheter
