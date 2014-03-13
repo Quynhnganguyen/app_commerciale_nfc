@@ -13,9 +13,9 @@
         android:id="@+id/editName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:ems="2"
         android:inputType="textMultiLine"
-        android:lines="5" />
+        android:lines="1" />
 
     <Button
         android:id="@+id/buttonValidate"
@@ -24,8 +24,28 @@
         android:text="@string/buttonValidate" />
 
     <TextView
-        android:id="@+id/textName"
+        android:id="@+id/indication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dip" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dip" >
+    </TextView>
 
 </LinearLayout>
