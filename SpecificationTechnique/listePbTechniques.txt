@@ -6,6 +6,6 @@ Liste des problèmes techniques prévus:
 	*permettre l'accès au Webservice aux magasins mais pas aux clients 
 	*le WebService doit pouvoir communiquer avec l'application
 - Connecter la base de données du téléphone avec le Webservice
-- Mettre l'application sur le téléphone
+- Mettre l'application sur le téléphone (Réglé!)
 
 
