@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppliListe</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="editName">editName</string>
+    <string name="buttonValidate">buttonValidate</string>
+    <string name="textName">textName</string>
+
+</resources>
