@@ -1,0 +1,47 @@
+*Classe Client
+String getNom(Client c)
+String getAdresse(Client c)
+void setAdresse(Client c)
+
+*Liste_produits_favoris
+Produit[] getListe_favoris(Client c)
+void addProduit_(Client c, Produit p)
+void removeProduit(Client c,Produit p)
+
+*Liste_noire_de_produits
+Produit[] getListeNoire(Client c)
+void addProduitListeNoire(Client c, Produit p)
+void removeProduitListeNoire(Client, Produit p)
+Produit getProduit(Liste_noire_de_produits liste)
+
+*Liste_produits_a_acheter
+Produit[] getListeAAcheter(Client c)
+void addProduitAAcheter(Client c, Produit p)
+void removeProduitAAcheter(Client c, Produit p)
+Liste_produits_a_acheter getListeDeLHistorique(Client c)
+Produit getProduit(Liste_produits_a_acheter liste)
+
+*Liste_courses_deja_faites
+Liste_produits_a_acheter[] getListeCoursesDejaFaites()
+void addListeCourses(Client c, Liste_produits_a_acheter liste)
+void removeListeCourses(Client c, Liste_produits_a_acheter liste)
+Produit getProduit(Liste_courses_deja_faites liste)
+
+*Produit
+String getNom(Produit p)
+String getPrix(Produit p)
+String getSource(Produit p)
+Source getSource(Produit p)
+String getTypeProduit(Produit p)
+Type_de_produit getTypeProduit(Produit p)
+Magasin getMagasin(Produit p)
+String getMagasin(Produit p)
+
+*Magasin
+String getNom(Magasin m)
+String getAdresse(Magasin m)
+Produit[] getListeProduits(Magasin m)
+Produit getProduit(Magasin m)
+String getFranchise(Magasin m)
+Franchise getFranchise(Magasin m)
+
