@@ -1,9 +1,0 @@
-L'Écran <-> Les tables
-+ Login <-> table Login
-+ Home <-> les tables Magasin, Produit, Liste_a_acheter
-+ Produit <-> les tables Produit, Franchise, Source, Type_de_produit, Liste_favorise, Liste_noire
-+ Comparer <-> les tables Produit, NFC
-+ Resultat_Comparer <-> les tables Produit, Franchise, Source, Type_de_produit
-+ Liste_a_acheter <-> les tables Produit, Magasin, Liste_a_acheter
-+ Magasins <-> table Magasin
-+ Scan_info_produit <-> les tables Produit, Franchise, Source, Type_de_produit, Magasin, Liste_a_acheter
