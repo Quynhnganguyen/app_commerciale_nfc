@@ -1,3 +1,8 @@
+3/04/2014
+-Trouver un moyen de faire communiquer le serveur avec le client sur l'émulateur en local
+-Faire la base de l'application android
+-Continuer les pages html de l'interface du webservice
+
 Thu Mar 20 17:09:03 CET 2014
 
 - Rajouter l'ajout d'utilisateur d'un magasin sur le site web.
