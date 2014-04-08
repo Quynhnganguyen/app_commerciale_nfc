@@ -1,0 +1,144 @@
+nav{
+	font-weight : bold; 
+	font-family : Arial; 
+	font-size : 20px; 
+	padding-bottom: 100px;
+}
+
+nav ul
+{
+	list-style : none; 
+	margin: 0px;
+}
+
+nav a
+{	
+	text-decoration : none; 
+}
+
+#menu_general ul
+{
+	text-align : center; 
+}
+
+
+#menu_general a
+{
+	display : inline-block; 
+	padding : 10px 10px 10px 10px; 
+	background :#CEE3F6; 
+	border-right:3px solid #F2F2F2;
+	color : black; 
+	
+}
+
+#menu_general a:hover
+{
+	border:2px outset #CEE3F6;
+}
+
+#menu_general li
+{
+	display : inline-block; 
+ 	float:left;
+	overflow : auto;	
+}
+
+#menu_gestion_produit
+{
+	float :left;
+}
+
+#menu_gestion_produit ul
+{
+	border: 2px solid black;
+	background: #F2F2F2;
+}
+#menu_gestion_produit a
+{
+	font-size : 13px;
+	display : block; 
+	padding : 10px 10px 10px 10px; 
+	background :#CEE3F6; 
+	border-bottom:3px solid #F2F2F2;
+	color : black; 
+	text-align:center;
+}
+
+section
+{
+	border: 3px solid black;
+	margin: 100px 200px 0px 200px;
+}
+
+h1
+{
+	text-align : center;
+	border-bottom:gray 3px solid;
+}
+
+p
+{
+	text-align : center;	
+}
+section table
+{
+	text-align : center;
+	margin-left: 30%;
+	margin-top : 100px;
+	margin-bottom : 100px;
+}
+
+#description_magasin table
+{
+	
+}
+
+#description_magasin td
+{
+	border:1px solid black;
+	border-radius:5px 5px 5px 5px;
+	padding:7px;
+		
+}
+
+
+#gestion table
+{
+	border-collapse:collapse;
+}
+
+#gestion th,td
+{
+	border:1px solid black;
+	padding:7px;
+	
+}
+
+.gestion_client table
+{
+	margin-left: 25%;
+}
+
+.gestion_produit
+{
+	margin: 0px 50px 0px 350px;
+}
+
+.gestion_produit table
+{
+	margin-left: 20%;
+}
+
+#valider
+{
+	margin-left: 45%;
+	margin-bottom: 10px;
+}
+
+#modifier_produit a:hover
+{
+	padding : 5px;
+	color: #CEE3F6;
+	border:2px outset #CEE3F6;
+}
