@@ -8,34 +8,61 @@ nav{
 nav ul
 {
 	list-style : none; 
-	text-align : center; 
 	margin: 0px;
 }
 
-
 nav a
+{	
+	text-decoration : none; 
+}
+
+#menu_general ul
+{
+	text-align : center; 
+}
+
+
+#menu_general a
 {
 	display : inline-block; 
 	padding : 10px 10px 10px 10px; 
 	background :#CEE3F6; 
 	border-right:3px solid #F2F2F2;
 	color : black; 
-	text-decoration : none; 
-	
-	
 	
 }
 
-nav a:hover
+#menu_general a:hover
 {
 	border:2px outset #CEE3F6;
 }
 
-nav li
+#menu_general li
 {
 	display : inline-block; 
  	float:left;
 	overflow : auto;	
+}
+
+#menu_gestion_produit
+{
+	float :left;
+}
+
+#menu_gestion_produit ul
+{
+	border: 2px solid black;
+	background: #F2F2F2;
+}
+#menu_gestion_produit a
+{
+	font-size : 13px;
+	display : block; 
+	padding : 10px 10px 10px 10px; 
+	background :#CEE3F6; 
+	border-bottom:3px solid #F2F2F2;
+	color : black; 
+	text-align:center;
 }
 
 section
@@ -60,9 +87,11 @@ section table
 	margin-left: 30%;
 	margin-top : 100px;
 	margin-bottom : 100px;
-	
-	
+}
 
+#description_magasin table
+{
+	
 }
 
 #description_magasin td
@@ -73,15 +102,43 @@ section table
 		
 }
 
-#gestion_client table
+
+#gestion table
 {
 	border-collapse:collapse;
 }
 
-#gestion_client th,td
+#gestion th,td
 {
 	border:1px solid black;
 	padding:7px;
 	
 }
 
+.gestion_client table
+{
+	margin-left: 25%;
+}
+
+.gestion_produit
+{
+	margin: 0px 50px 0px 350px;
+}
+
+.gestion_produit table
+{
+	margin-left: 20%;
+}
+
+#valider
+{
+	margin-left: 45%;
+	margin-bottom: 10px;
+}
+
+#modifier_produit a:hover
+{
+	padding : 5px;
+	color: #CEE3F6;
+	border:2px outset #CEE3F6;
+}
