@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+		<head>
+			<title> Admin - Liste Magasins </title>
+			<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+			<link href="style.css" rel="stylesheet" media="all" type="text/css" title="style" />
+		
+		</head>
+		
+		<body>
+			<nav id="menu_general">      
+   					<ul>    
+						<li><a href="listeMagasins.html.erb">Accueil</a></li>
+					</ul>
+						    
+			</nav>
+		
+			<nav id="menu_gestion">      
+   					<ul>    
+						<div id="page_en_cours"><li><a href="listeMagasins.html.erb">Liste des magasins</a></li></div>
+						<li><a href="listeUtilisateurs.html.erb">Utilisateurs du WebService</a></li>
+						<li><a href="ajouterMagasin.html.erb">Ajouter un nouveau magasin</a></li>
+						<li><a href="ajouterUtilisateur.html.erb">Ajouter un nouvel utilisateur</a></li>
+					</ul>
+						    
+			</nav>	
+				
+			<section id="gestion" class="gestion_admin">
+				<table>
+					<h1>Liste de tous les magasins</h1>
+					<tr>
+						<th>Nom du magasin</th> 
+						<th>Adresse</th> 
+						<th>Franchise</th>
+						<th>Modifier</th>
+						<th>Supprimer</th>
+						<th>Clients</th>
+					</tr>
+					<tr>
+						<td>Petit Casino</td> 
+						<td>39 Avenue Gabriel Péri, 95100 Argenteuil</td> 
+						<td>Casino</td>
+						<td id="modifier">
+							<a href="modifierMagasin.html.erb">
+								<img src="crayon.png" alt="modifier" width="20" heigth="20"/>
+							</a> 
+						</td>
+						<td>
+							<input type="checkbox" name="supprimer_magasin">
+						</td>
+						<td>Tous les clients</td>
+					</tr>
+				</table>
+				<p>
+					<input type=submit value=Valider> 
+					<input type=reset value=Annuler>
+				</p>								
+			</section>
+			
+		</body>
+	</html>
