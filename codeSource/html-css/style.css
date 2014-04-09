@@ -54,16 +54,33 @@ nav a
 	border: 2px solid black;
 	background: #F2F2F2;
 }
+
+#menu_gestion_produit li
+{
+	background :#CEE3F6; 
+}
+
+#page_en_cours li
+{
+	background: white;
+	border : 1px inset #F2F2F2; 
+}
+
 #menu_gestion_produit a
 {
 	font-size : 13px;
 	display : block; 
 	padding : 10px 10px 10px 10px; 
-	background :#CEE3F6; 
 	border-bottom:3px solid #F2F2F2;
 	color : black; 
 	text-align:center;
 }
+
+#menu_gestion_produit a:hover
+{
+	border:3px outset #F2F2F2;
+}
+
 
 section
 {
