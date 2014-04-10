@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nomMagasin: MyText
+  adresse: MyText
+  id_franchise: 1
+
+two:
+  nomMagasin: MyText
+  adresse: MyText
+  id_franchise: 1
