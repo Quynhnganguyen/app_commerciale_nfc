@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+		<head>
+			<title> Ajouter Produit </title>
+			<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+			<link href="style.css" rel="stylesheet" media="all" type="text/css" title="style" />
+		
+		</head>
+		
+		<body>
+			<nav id="menu_general">      
+   					<ul>    
+						<li><a href="accueil.html.erb">Accueil</a></li>
+						<li><a href="gestionClient.html.erb">Gestion client</a></li>
+						<div id="page_en_cours"><li><a href="gestionProduit.html.erb">Gestion Produit</a></li></div>
+					</ul>
+						    
+			</nav>
+		
+			<nav id="menu_gestion">      
+   					<ul>    
+						<li><a href="gestionProduit.html.erb">Liste de produits</a></li>
+						<div id="page_en_cours"><li><a href="ajouterProduit.html.erb">Ajouter un nouveau produit</a></li></div>
+						<li><a href="ajouterType.html.erb">Ajouter un nouveau type de produit</a></li>
+						<li><a href="ajouterSource.html.erb">Ajouter une nouvelle Source</a></li>
+						<li><a href="ajouterFranchise.html.erb">Ajouter une nouvelle Franchise</a></li>
+					</ul>
+						    
+			</nav>	
+				
+			<section id="gestion" class="gestion_produit">
+				<h1>Ajout d'un nouveau produit</h1>
+				<form method=POST action=mail.php>
+					<p>Nom <input type="text" name="nom_du_produit"/> </p>
+					<p>Type <input type="text" name="type"/></p>					
+					<p>Prix <input type="text" name="prix"/></p>
+					<p>Source
+						<select name="source" width="100">
+							<option value="italie">Italie</option>
+							<option value="italie">Chine</option>
+						</select>
+					</p>	
+					<p>Nombre <input type="text" name="nombre"/> </p>
+					<p>ID NFC <input type="text" name="id_nfc"/> </p>				
+						
+				</form>				
+				<p>
+					<input type=submit value=Valider> 
+					<input type=reset value=Annuler>
+				</p>
+			</section>
+			
+		</body>
+	</html>

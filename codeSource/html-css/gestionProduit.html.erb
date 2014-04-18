@@ -12,17 +12,18 @@
    					<ul>    
 						<li><a href="accueil.html.erb">Accueil</a></li>
 						<li><a href="gestionClient.html.erb">Gestion client</a></li>
-						<li><a href="gestionProduit.html.erb">Gestion Produit</a></li>
+						<div id="page_en_cours"><li><a href="gestionProduit.html.erb">Gestion Produit</a></li></div>
 					</ul>
 						    
 			</nav>
 		
-			<nav id="menu_gestion_produit">      
+			<nav id="menu_gestion">      
    					<ul>    
-						<li><a href="#">Liste de produits</a></li>
-						<li><a href="#">Ajouter un nouveau produit</a></li>
-						<li><a href="#">Ajouter un nouveau type de produit</a></li>
-						<li><a href="#">Ajouter une nouvelle Source</a></li>
+						<div id="page_en_cours"><li><a href="gestionProduit.html.erb">Liste de produits</a></li></div>
+						<li><a href="ajouterProduit.html.erb">Ajouter un nouveau produit</a></li>
+						<li><a href="ajouterType.html.erb">Ajouter un nouveau type de produit</a></li>
+						<li><a href="ajouterSource.html.erb">Ajouter une nouvelle Source</a></li>
+						<li><a href="ajouterFranchise.html.erb">Ajouter une nouvelle Franchise</a></li>
 					</ul>
 						    
 			</nav>	
@@ -43,7 +44,7 @@
 						<td>0,96€</td> 
 						<td>féculents</td>
 						<td>Italie</td> 
-						<td id="modifier_produit">
+						<td id="modifier">
 							<a href="modifierProduit.html.erb">
 								<img src="crayon.png" alt="modifier" width="20" heigth="20"/>
 							</a> 
@@ -53,8 +54,11 @@
 						</td>
 					</tr>
 				</table>
-							
-				<input type="submit" value="Valider" id="valider">	
+					<p>
+						<input type=submit value=Valider> 
+						<input type=reset value=Annuler>
+					</p>
+				
 			</section>
 			
 		</body>

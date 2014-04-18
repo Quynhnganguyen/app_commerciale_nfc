@@ -12,17 +12,18 @@
    					<ul>    
 						<li><a href="accueil.html.erb">Accueil</a></li>
 						<li><a href="gestionClient.html.erb">Gestion client</a></li>
-						<li><a href="gestionProduit.html.erb">Gestion Produit</a></li>
+						<div id="page_en_cours"><li><a href="gestionProduit.html.erb">Gestion Produit</a></li></div>
 					</ul>
 						    
 			</nav>
 		
-			<nav id="menu_gestion_produit">      
+			<nav id="menu_gestion">      
    					<ul>    
-						<li><a href="#">Liste de produits</a></li>
-						<li><a href="#">Ajouter un nouveau produit</a></li>
-						<li><a href="#">Ajouter un nouveau type de produit</a></li>
-						<li><a href="#">Ajouter une nouvelle Source</a></li>
+						<div id="page_en_cours"><li><a href="gestionProduit.html.erb">Liste de produits</a></li></div>
+						<li><a href="ajouterProduit.html.erb">Ajouter un nouveau produit</a></li>
+						<li><a href="ajouterType.html.erb">Ajouter un nouveau type de produit</a></li>
+						<li><a href="ajouterSource.html.erb">Ajouter une nouvelle Source</a></li>
+						<li><a href="ajouterFranchise.html.erb">Ajouter une nouvelle Franchise</a></li>
 					</ul>
 						    
 			</nav>	
@@ -30,17 +31,15 @@
 			<section id="gestion" class="gestion_produit">
 				<h1>Modification du produit => Pâte Fiorini</h1>
 				<form method=POST action=mail.php>
-					<p>Type <input type="text" name="Type" value="pâtes fiorini"/> </p>					
-					<p>Prix <input type="text" name="Prix" value="Email"/> </p>	
-					<p>Source <input type="text" name="Source" value="Italie"/> </p>	
-					<p>Nombre <input type="text" name="Nombre" value="12"/> </p>	
+					<p>Type <input type="text" name="type" value="pâtes fiorini"/> </p>					
+					<p>Prix <input type="text" name="prix" value="Email"/> </p>	
+					<p>Source <input type="text" name="source" value="Italie"/> </p>	
+					<p>Nombre <input type="text" name="nombre" value="12"/> </p>	
 				</form>				
-				<div id="valider_modif_produit">
-					<p>
-						<input type=submit value=Valider> 
-						<input type=reset value=Annuler>
-					</p>
-				</div>
+				<p>
+					<input type=submit value=Valider> 
+					<input type=reset value=Annuler>
+				</p>
 			</section>
 			
 		</body>

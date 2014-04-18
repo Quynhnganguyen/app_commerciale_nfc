@@ -11,7 +11,7 @@
 			<nav id="menu_general">      
    					<ul>    
 						   <li><a href="accueil.html.erb">Accueil</a></li>
-						   <li><a href="gestionClient.html.erb">Gestion client</a></li>
+						   <div id="page_en_cours"><li><a href="gestionClient.html.erb">Gestion client</a></li></div>
 						   <li><a href="gestionProduit.html.erb">Gestion Produit</a></li>
 					</ul>
 						    
@@ -20,8 +20,18 @@
 			<section id="gestion" class ="gestion_client">
 				<table>
 					<h1>Clients du magasin</h1>
-					<tr><th>Nom</th> <th>Prenom</th> <th>Adresse Email</th> <th>Bloquer</th></tr>
-					<tr><td>Dupont</td> <td>Martine</td> <td>dupont_martine@gmail.com</td><td><input type="checkbox" name="bloquer_client1"></td></tr>
+					<tr>
+						<th>Nom</th> 
+						<th>Prenom</th> 
+						<th>Adresse Email</th> 
+						<th>Bloquer</th>
+					</tr>
+					<tr>
+						<td>Dupont</td>
+						<td>Martine</td> 
+						<td>dupont_martine@gmail.com</td>
+						<td><input type="checkbox" name="bloquer_client1"></td>
+					</tr>
 				</table>
 			</section>
 			

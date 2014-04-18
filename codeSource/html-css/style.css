@@ -44,26 +44,43 @@ nav a
 	overflow : auto;	
 }
 
-#menu_gestion_produit
+#menu_gestion
 {
 	float :left;
 }
 
-#menu_gestion_produit ul
+#menu_gestion ul
 {
 	border: 2px solid black;
 	background: #F2F2F2;
 }
-#menu_gestion_produit a
+
+#menu_gestion li
+{
+	background :#CEE3F6; 
+}
+
+#page_en_cours li
+{
+	background: white;
+	border : 1px inset #F2F2F2; 
+}
+
+#menu_gestion a
 {
 	font-size : 13px;
 	display : block; 
 	padding : 10px 10px 10px 10px; 
-	background :#CEE3F6; 
 	border-bottom:3px solid #F2F2F2;
 	color : black; 
 	text-align:center;
 }
+
+#menu_gestion a:hover
+{
+	border:3px outset #F2F2F2;
+}
+
 
 section
 {
@@ -120,7 +137,7 @@ section table
 	margin-left: 25%;
 }
 
-.gestion_produit
+.gestion_produit,.gestion_admin
 {
 	margin: 0px 50px 0px 350px;
 }
@@ -130,13 +147,19 @@ section table
 	margin-left: 20%;
 }
 
+.gestion_admin table
+{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
 #valider
 {
 	margin-left: 45%;
 	margin-bottom: 10px;
 }
 
-#modifier_produit a:hover
+#modifier a:hover
 {
 	padding : 5px;
 	color: #CEE3F6;
