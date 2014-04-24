@@ -18,6 +18,14 @@ add gem spécial for heroku (on Gemfile):
 reference:
 	https://devcenter.heroku.com/articles/getting-started-with-rails4#store-your-app-in-git
 
+3.1 Set up gem devise
+	https://github.com/plataformatec/devise
+
 3. Set up railsadmin and activeadmin
 reference: 
 	http://batsov.com/articles/2011/11/20/admin-interfaces-for-rails-apps-railsadmin-vs-activeadmin/
+
+4. For reset db:
+	$rake db:reset
+reference:
+	http://guides.rubyonrails.org/migrations.html

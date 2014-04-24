@@ -38,6 +38,12 @@ CREATE TABLE IF NOT EXISTS `client` (
   PRIMARY KEY (`id_client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+Create_table(:users) do |t|
+    t.string :nom_client,     null: false
+    t.string :prenom_client,  null: false
+    t.string :adresse_mail_client, null: false
+   t.timestamps
+end
 -- --------------------------------------------------------
 
 --
