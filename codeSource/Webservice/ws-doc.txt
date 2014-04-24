@@ -1,3 +1,5 @@
+Codesource for webservice: ws-commercial
+
 1. Install ruby-on-rails app automatique with bootstrap
 reference: 
 	https://github.com/RailsApps/rails-bootstrap
@@ -15,3 +17,7 @@ add gem spécial for heroku (on Gemfile):
 	gem 'rails_12factor', group: :production
 reference:
 	https://devcenter.heroku.com/articles/getting-started-with-rails4#store-your-app-in-git
+
+3. Set up railsadmin and activeadmin
+reference: 
+	http://batsov.com/articles/2011/11/20/admin-interfaces-for-rails-apps-railsadmin-vs-activeadmin/
