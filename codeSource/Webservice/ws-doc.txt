@@ -1,0 +1,23 @@
+Codesource for webservice: ws-commercial
+
+1. Install ruby-on-rails app automatique with bootstrap
+reference: 
+	https://github.com/RailsApps/rails-bootstrap
+console:
+	$ rails new app-name -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
+	$ 2 (choice Build a contributed application)
+	$ 1 (choice continue)
+	.......
+	(use Bootstrap, Devise, Postgresql, Thin, MiniTest)
+	$ cd app-name
+	$ rails s
+
+2. Set up for heroku server
+add gem spécial for heroku (on Gemfile): 
+	gem 'rails_12factor', group: :production
+reference:
+	https://devcenter.heroku.com/articles/getting-started-with-rails4#store-your-app-in-git
+
+3. Set up railsadmin and activeadmin
+reference: 
+	http://batsov.com/articles/2011/11/20/admin-interfaces-for-rails-apps-railsadmin-vs-activeadmin/
