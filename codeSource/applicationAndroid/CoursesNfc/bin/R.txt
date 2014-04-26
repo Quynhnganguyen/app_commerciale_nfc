@@ -253,7 +253,6 @@ int id beginning 0x7f050011
 int id boutonConnexion 0x7f050045
 int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
-int id container 0x7f050040
 int id default_activity_button 0x7f050028
 int id dialog 0x7f05000e
 int id disableHome 0x7f050008
@@ -270,6 +269,7 @@ int id image 0x7f050027
 int id listMode 0x7f050001
 int id list_item 0x7f050029
 int id listeDeroulanteMagasins 0x7f05003c
+int id listeFavoris 0x7f050040
 int id listeMagasins 0x7f050042
 int id listeNoire 0x7f050041
 int id listeProduits 0x7f05003d

@@ -32,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
 				// TODO Auto-generated method stub
 				if (v.getId() == R.id.boutonConnexion) {
 					Toast.makeText(MainActivity.this, "Connexion ",Toast.LENGTH_LONG).show();
-					Intent intent = new Intent(MainActivity.this,MagasinActivity.class);
+					Intent intent = new Intent(MainActivity.this,FavorisActivity.class);
 					startActivity(intent);
 				}
 			}

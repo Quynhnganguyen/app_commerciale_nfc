@@ -1098,7 +1098,6 @@ containing a value of this type.
         public static final int boutonConnexion=0x7f050045;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
-        public static final int container=0x7f050040;
         public static final int default_activity_button=0x7f050028;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
@@ -1115,6 +1114,7 @@ containing a value of this type.
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
         public static final int listeDeroulanteMagasins=0x7f05003c;
+        public static final int listeFavoris=0x7f050040;
         public static final int listeMagasins=0x7f050042;
         public static final int listeNoire=0x7f050041;
         public static final int listeProduits=0x7f05003d;
