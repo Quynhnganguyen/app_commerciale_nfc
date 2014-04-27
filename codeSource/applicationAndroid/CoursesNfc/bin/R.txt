@@ -366,6 +366,7 @@ int string abc_searchview_description_submit 0x7f0a0007
 int string abc_searchview_description_voice 0x7f0a0008
 int string abc_shareactionprovider_share_with 0x7f0a000c
 int string abc_shareactionprovider_share_with_application 0x7f0a000b
+int string accueil 0x7f0a001c
 int string action_settings 0x7f0a000f
 int string app_name 0x7f0a000d
 int string boutonConnexion 0x7f0a0012

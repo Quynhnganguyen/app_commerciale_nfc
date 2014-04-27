@@ -3,10 +3,10 @@
     android:layout_height="fill_parent"
     android:background="#CEE3F6"
     android:orientation="vertical" >
-
+    
     <Spinner
         android:id="@+id/listeDeroulanteMagasins"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" 
         android:layout_marginLeft="10dp"

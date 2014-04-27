@@ -24,8 +24,7 @@ public class AccueilActivity extends MenuActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_accueil);
-		 
-		 
+		
 		  listeMagasins = (Spinner) findViewById(R.id.listeDeroulanteMagasins);
 		  ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(this,
 		    android.R.layout.simple_spinner_item, magasins);

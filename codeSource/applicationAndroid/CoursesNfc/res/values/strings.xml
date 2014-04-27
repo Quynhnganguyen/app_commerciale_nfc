@@ -16,5 +16,6 @@
     <string name="title_activity_favoris">FavorisActivity</string>
     <string name="title_activity_liste_noire">ListeNoireActivity</string>
     <string name="title_activity_menu">MenuActivity</string>
+    <string name="accueil">Accueil</string>
 
 </resources>
