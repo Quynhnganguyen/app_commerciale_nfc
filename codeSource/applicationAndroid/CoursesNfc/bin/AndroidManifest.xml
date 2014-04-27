@@ -46,6 +46,10 @@
             android:name="application_commerciale.coursesnfc.ListeNoireActivity"
             android:label="@string/title_activity_liste_noire" >
         </activity>
+        <activity
+            android:name="application_commerciale.coursesnfc.MenuActivity"
+            android:label="@string/title_activity_menu" >
+        </activity>
     </application>
 
 </manifest>

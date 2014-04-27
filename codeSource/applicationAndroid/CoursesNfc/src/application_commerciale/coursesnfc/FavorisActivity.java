@@ -4,21 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.os.Build;
 
-public class FavorisActivity extends ActionBarActivity {
+public class FavorisActivity extends MenuActivity {
 	ListView listeFavoris;
 	List<HashMap<String, String>> produitsFavoris;
 	ListAdapter adapter;

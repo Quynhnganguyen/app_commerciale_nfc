@@ -5,14 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-public class MagasinActivity extends ActionBarActivity {
+public class MagasinActivity extends MenuActivity {
 	ListView listeMagasins;
 	List<HashMap<String, String>> magasins;
 	ListAdapter adapter; 

@@ -5,14 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-public class ListeNoireActivity extends ActionBarActivity {
+public class ListeNoireActivity extends MenuActivity {
 	ListView listeNoire;
 	List<HashMap<String, String>> produitsNoirs;
 	ListAdapter adapter;
