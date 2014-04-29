@@ -233,6 +233,7 @@ CREATE TABLE IF NOT EXISTS `source` (
   `pays` varchar(40) NOT NULL,
   PRIMARY KEY (`id_source`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 Create_table(:sources) do |t|
     t.string :pays,  null: false
    t.timestamps
