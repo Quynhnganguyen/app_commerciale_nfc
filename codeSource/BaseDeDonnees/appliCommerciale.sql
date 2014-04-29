@@ -56,6 +56,10 @@ CREATE TABLE IF NOT EXISTS `franchise` (
   PRIMARY KEY (`id_franchise`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+Create_table(:franchises) do |t|
+    t.string :nom_entreprise,     null: false
+   t.timestamps
+end
 -- --------------------------------------------------------
 
 --
@@ -66,6 +70,7 @@ CREATE TABLE IF NOT EXISTS `liste_courses_deja_faites` (
   `id_liste_courses_deja_faites` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id_liste_courses_deja_faites`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 
@@ -117,6 +122,12 @@ CREATE TABLE IF NOT EXISTS `magasin` (
   KEY `id_franchise` (`id_franchise`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+Create_table(:magasins) do |t|
+    t.string :nom_magasin,     null: false
+    t.string :adresse_magasin, null: false
+    t.string :id_franchise, null: false
+   t.timestamps
+end
 -- --------------------------------------------------------
 
 --
@@ -140,6 +151,11 @@ CREATE TABLE IF NOT EXISTS `nfc_tag` (
   PRIMARY KEY (`id_nfc_tag`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+Create_table(:tags) do |t|
+    t.string :id_nfc_tag,     null: false
+   t.timestamps
+end
+
 -- --------------------------------------------------------
 
 --
@@ -161,6 +177,15 @@ CREATE TABLE IF NOT EXISTS `produit` (
   KEY `id_nfc_tag` (`id_nfc_tag`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+Create_table(:produits) do |t|
+    t.string :nom_produit,     null: false
+    t.float :prix,  null: false
+    t.string :type_produit
+    t.string :source
+    t.string :magasin
+    t.string :id_nfc_tag, null: false
+   t.timestamps
+end
 -- --------------------------------------------------------
 
 --
@@ -208,6 +233,10 @@ CREATE TABLE IF NOT EXISTS `source` (
   `pays` varchar(40) NOT NULL,
   PRIMARY KEY (`id_source`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+Create_table(:sources) do |t|
+    t.string :pays,  null: false
+   t.timestamps
+end
 
 -- --------------------------------------------------------
 
@@ -221,6 +250,10 @@ CREATE TABLE IF NOT EXISTS `type_de_produit` (
   PRIMARY KEY (`id_type_produit`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+Create_table(:type_de_produits) do |t|
+    t.string :type_produit,     null: false
+   t.timestamps
+end
 --
 -- Contraintes pour les tables exportées
 --
