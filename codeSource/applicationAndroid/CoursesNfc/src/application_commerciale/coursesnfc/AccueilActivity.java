@@ -5,9 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -17,7 +14,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 
-public class AccueilActivity extends ActionBarActivity {
+public class AccueilActivity extends MenuActivity {
 	private String[] magasins = { "Magasin1", "Magasin2", "Magasin3" };
 	Spinner listeMagasins;
 	ListView listeProduits;
@@ -27,8 +24,7 @@ public class AccueilActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_accueil);
-		 
-		 
+		
 		  listeMagasins = (Spinner) findViewById(R.id.listeDeroulanteMagasins);
 		  ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(this,
 		    android.R.layout.simple_spinner_item, magasins);
@@ -83,25 +79,7 @@ public class AccueilActivity extends ActionBarActivity {
 		
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
 
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.accueil, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 
 	
 

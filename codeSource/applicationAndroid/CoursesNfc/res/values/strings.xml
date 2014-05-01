@@ -15,5 +15,15 @@
     <string name="title_activity_magasin">MagasinActivity</string>
     <string name="title_activity_favoris">FavorisActivity</string>
     <string name="title_activity_liste_noire">ListeNoireActivity</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="accueil">Accueil</string>
+    <string name="inscription">Pas encore inscrit? Inscrivez-vous de suite!</string>
+    <string name="title_activity_inscription">InscriptionActivity</string>
+    <string name="nom">nom</string>
+    <string name="prenom"></string>
+    <string name="adresseMail"></string>
+    <string name="login"></string>
+    <string name="mdp"></string>
+    <string name="boutonValiderInscription">ValiderInscription</string>
 
 </resources>
