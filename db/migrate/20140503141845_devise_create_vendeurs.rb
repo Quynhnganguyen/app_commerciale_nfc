@@ -1,6 +1,6 @@
-class DeviseCreateAdminMagasins < ActiveRecord::Migration
+class DeviseCreateVendeurs < ActiveRecord::Migration
   def change
-    create_table(:admin_magasins) do |t|
+    create_table(:vendeurs) do |t|
       ## Database authenticatable
       t.string :name
       t.string :email,              null: false, default: ""
@@ -35,9 +35,9 @@ class DeviseCreateAdminMagasins < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :admin_magasins, :email,                unique: true
-    add_index :admin_magasins, :reset_password_token, unique: true
-    # add_index :admin_magasins, :confirmation_token,   unique: true
-    # add_index :admin_magasins, :unlock_token,         unique: true
+    add_index :vendeurs, :email,                unique: true
+    add_index :vendeurs, :reset_password_token, unique: true
+    # add_index :vendeurs, :confirmation_token,   unique: true
+    # add_index :vendeurs, :unlock_token,         unique: true
   end
 end

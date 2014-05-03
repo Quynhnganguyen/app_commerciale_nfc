@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :admin_magasins
+  namespace :admin do
+  get 'magasin/index'
+  get 'magasin/new'
+  post 'magasin/create'
+  end
+
+  devise_for :vendeurs
+
+  namespace :magasin do
+  get 'produit/index'
+  end
+
+  namespace :admin do
+    
+  end
+
+  get 'magasins/index'
+
   devise_for :admins
   devise_for :clients
   # The priority is based upon order of creation: first created -> highest priority.

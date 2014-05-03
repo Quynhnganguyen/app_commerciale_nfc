@@ -59,16 +59,16 @@
                   <li><%= link_to 'Edit account', edit_admin_registration_path %></li>
                   <li><%= link_to 'Logout', destroy_admin_session_path, :method=>'delete' %></li>
 
-                  <% elsif admin_magasin_signed_in? %>
+                  <% elsif vendeur_signed_in? %>
 
-                    <li><%= link_to 'Edit account', edit_admin_magasin_registration_path %></li>
-                    <li><%= link_to 'Logout', destroy_admin_magasin_session_path, :method=>'delete' %></li>
+                    <li><%= link_to 'Edit account', edit_vendeur_registration_path %></li>
+                    <li><%= link_to 'Logout', destroy_vendeur_session_path, :method=>'delete' %></li>
 
                   <% else %>
 
                     <li><%= link_to 'Client', new_client_session_path %></li>
                     <li><%= link_to 'Admin', new_admin_session_path %></li>              
-                    <li><%= link_to 'Magasin', new_admin_magasin_session_path %></li>
+                    <li><%= link_to 'Magasin', new_vendeur_session_path %></li>
 
               <% end %>
 
@@ -84,12 +84,12 @@
             <%= bootstrap_flash %>
             <%= yield %>
           </div>
-
+<!-- nav for Client -->
           <% if client_signed_in? %>
 
             <div class="span3">
               <div class="well sidebar-nav">
-                <h3>Sidebar Client</h3>
+                <h3>Client</h3>
                 <ul class="nav nav-list">
                   <li class="nav-header">Sidebar</li>
                   <li><%= link_to "Link1", "/path1"  %></li>
@@ -98,26 +98,30 @@
                 </ul>
               </div><!--/.well -->
             </div><!--/span-->
+
+<!-- nav for Admin -->
 
           <% elsif admin_signed_in? %>
 
             <div class="span3">
               <div class="well sidebar-nav">
-                <h3>Sidebar Admin</h3>
+                <h3>Admin</h3>
                 <ul class="nav nav-list">
                   <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Link1", "/path1"  %></li>
+                  <li><%= link_to "Magasin", admin_magasin_index_path %></li>
                   <li><%= link_to "Link2", "/path2"  %></li>
                   <li><%= link_to "Link3", "/path3"  %></li>
                 </ul>
               </div><!--/.well -->
             </div><!--/span-->
 
-          <% elsif admin_magasin_signed_in? %>
+<!-- nav for Vendeur -->
+
+          <% elsif vendeur_signed_in? %>
 
             <div class="span3">
               <div class="well sidebar-nav">
-                <h3>Sidebar Magasin</h3>
+                <h3>Magasin</h3>
                 <ul class="nav nav-list">
                   <li class="nav-header">Sidebar</li>
                   <li><%= link_to "Link1", "/path1"  %></li>
@@ -129,12 +133,14 @@
 
           <% else %>
 
+<!-- nav for other -->
+
             <div class="span3">
               <div class="well sidebar-nav">
                 <h3>Sidebar</h3>
                 <ul class="nav nav-list">
                   <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Link1", "/path1"  %></li>
+                  <li><%= link_to "Magasin", magasins_index_path %></li>
                   <li><%= link_to "Link2", "/path2"  %></li>
                   <li><%= link_to "Link3", "/path3"  %></li>
                 </ul>
