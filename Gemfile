@@ -42,3 +42,6 @@ gem 'simple_form'
 gem "twitter-bootstrap-rails"
 gem "less-rails"	
 gem "therubyracer"
+gem 'devise'
+gem 'rails_12factor', group: :production
+ruby "2.1.1"
