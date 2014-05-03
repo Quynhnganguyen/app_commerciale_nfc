@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  namespace :admin do
-  get 'magasin/index'
-  get 'magasin/new'
-  post 'magasin/create'
-  end
 
   devise_for :vendeurs
 
+  namespace :admin do
+    get 'magasin/index'
+    get 'magasin/new'
+    post 'magasin/create'
+  end
+
   namespace :magasin do
-  get 'produit/index'
+    get 'produit/index'
   end
 
   namespace :admin do
