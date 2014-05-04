@@ -1,5 +1,8 @@
 class Admin::VendeursController < ApplicationController
 
+  def index
+  end
+  
   def new
     @context = context
     @vendeur = @context.vendeur.new
