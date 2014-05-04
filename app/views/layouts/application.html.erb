@@ -49,6 +49,7 @@
           <a class="brand" href="#">Achat Rapid Nfc</a>
           <div class="container nav-collapse">
             <ul class="nav">
+
               <% if client_signed_in? %>
 
                 <li><%= link_to 'Edit account', edit_client_registration_path %></li>
@@ -69,6 +70,9 @@
                     <li><%= link_to 'Client', new_client_session_path %></li>
                     <li><%= link_to 'Admin', new_admin_session_path %></li>              
                     <li><%= link_to 'Magasin', new_vendeur_session_path %></li>
+                  <li><%= link_to 'Logout', destroy_admin_session_path, :method=>'delete' %></li>
+                    <li><%= link_to 'Logout', destroy_vendeur_session_path, :method=>'delete' %></li>
+                     
 
               <% end %>
 
@@ -124,7 +128,7 @@
                 <h3>Magasin</h3>
                 <ul class="nav nav-list">
                   <li class="nav-header">Sidebar</li>
-                  <li><%= link_to "Link1", "/path1"  %></li>
+                  <li><%= link_to "Info", magasin_magasins_index_path  %></li>
                   <li><%= link_to "Link2", "/path2"  %></li>
                   <li><%= link_to "Link3", "/path3"  %></li>
                 </ul>

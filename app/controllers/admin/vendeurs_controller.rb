@@ -19,7 +19,7 @@ class Admin::VendeursController < ApplicationController
 
   def edit
     @context = context
-    @vendeur = context.vendeur.find(params[:id])
+    @vendeur = @context.vendeur.find(params[:id])
   end
  
   def update
