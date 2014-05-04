@@ -4,5 +4,5 @@ class Vendeur < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # belongs_to :magasin
+  belongs_to :magasin
 end

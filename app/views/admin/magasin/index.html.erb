@@ -9,15 +9,19 @@
     <tr>
       <th >Nom du magasin</th>
       <th >Adresse du magasin</th>
+      <th >Venders</th>
+      <th >New vender</th>
+
   
     </tr>
   </thead>
   <tbody>
-    <% @magasins.each do |e| %>
+    <% @magasins.each do |m| %>
       <tr>
-        <td><%= e.nom_magasin %></td>
-        
-        <td><%= e.adresse_magasin %></td>
+        <td><%= m.nom_magasin %></td>
+        <td><%= m.adresse_magasin %></td>
+        <td><%= m.vendeur.count %></td>
+        <td> <%= link_to "New Vender", new_admin_magasin_vendeur_path(m), class: "btn btn-primary" %></td>
       </tr>
     <% end %>
     

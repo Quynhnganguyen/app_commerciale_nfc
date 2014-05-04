@@ -6,6 +6,11 @@ Rails.application.routes.draw do
     get 'magasin/index'
     get 'magasin/new'
     post 'magasin/create'
+
+    resources :magasin do 
+      resources :vendeurs, only: [:new, :create]
+    end
+
   end
 
   namespace :magasin do
