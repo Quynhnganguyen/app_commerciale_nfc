@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504082631) do
+ActiveRecord::Schema.define(version: 20140504225828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin_magasins", force: true do |t|
+    t.string   "name"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admin_magasins", ["email"], name: "index_admin_magasins_on_email", unique: true, using: :btree
+  add_index "admin_magasins", ["reset_password_token"], name: "index_admin_magasins_on_reset_password_token", unique: true, using: :btree
 
   create_table "admins", force: true do |t|
     t.datetime "created_at"
@@ -90,7 +109,10 @@ ActiveRecord::Schema.define(version: 20140504082631) do
     t.string   "adresse_magasin", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "franchise_id"
   end
+
+  add_index "magasins", ["franchise_id"], name: "index_magasins_on_franchise_id", using: :btree
 
   create_table "nfcs", force: true do |t|
     t.string   "id_nfc_tag", null: false
@@ -103,19 +125,28 @@ ActiveRecord::Schema.define(version: 20140504082631) do
     t.float    "prix",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "magasin_id"
   end
+
+  add_index "produits", ["magasin_id"], name: "index_produits_on_magasin_id", using: :btree
 
   create_table "sources", force: true do |t|
     t.string   "pays",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "magasin_id"
   end
+
+  add_index "sources", ["magasin_id"], name: "index_sources_on_magasin_id", using: :btree
 
   create_table "type_de_produits", force: true do |t|
     t.string   "type_produit", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "magasin_id"
   end
+
+  add_index "type_de_produits", ["magasin_id"], name: "index_type_de_produits_on_magasin_id", using: :btree
 
   create_table "vendeurs", force: true do |t|
     t.string   "name"

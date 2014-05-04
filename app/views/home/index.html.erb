@@ -1,1 +1,18 @@
-<h3>Bienvenue sur Webservice de gestion le système d'achat rapid en utilisant la technologie NFC</h3>
+
+
+<% if client_signed_in? %>
+
+    <h3>Bienvenue client sur Webservice de gestion le système d'achat rapid en utilisant la technologie NFC</h3>
+
+<% elsif admin_signed_in? %>
+                    
+    <h3>Bienvenue admin sur Webservice de gestion le système d'achat rapid en utilisant la technologie NFC</h3>
+
+<% elsif vendeur_signed_in? %>
+
+    <h3>Gestion de Magasin <%= current_vendeur.magasin.try(:nom_magasin) %></h3>
+
+<% else%>
+
+    <h3>Bienvenue sur Webservice de gestion le système d'achat rapid en utilisant la technologie NFC</h3>
+<% end %>

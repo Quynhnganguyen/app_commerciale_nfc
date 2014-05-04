@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  namespace :magasin do
+  get 'type_de_produits/index'
+  end
+
+  namespace :magasin do
+  get 'nfcs/index'
+  end
+
+  namespace :magasin do
+  get 'sources/index'
+  end
+
+  namespace :magasin do
+  get 'franchises/index'
+  end
+
   devise_for :vendeurs
 
   namespace :admin do

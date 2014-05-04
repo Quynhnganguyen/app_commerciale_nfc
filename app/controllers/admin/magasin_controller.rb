@@ -1,6 +1,7 @@
 class Admin::MagasinController < ApplicationController
 
   def index
+    @admin = admin
   	@magasins = Magasin.all
   end
 
@@ -29,6 +30,13 @@ class Admin::MagasinController < ApplicationController
   end
 
   private
+
+  def admin
+    if current_admin.id
+      id = current_admin.id
+      Admin.find(current_admin.id)
+    end
+  end
 
   def magasin_params
     params.require(:magasin).permit(:nom_magasin, :adresse_magasin)

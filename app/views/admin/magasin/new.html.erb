@@ -2,11 +2,14 @@
 
 <%= form_for @magasin, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
   <div class="form-inputs">
-    <%= f.label :nom_magasin %><br>
+    <%= f.label :nom_magasin %>
   	<%= f.text_field :nom_magasin%>
     
-    <%= f.label :adresse_magasin %><br>
+    <%= f.label :adresse_magasin %>
     <%= f.text_field :adresse_magasin %>
+
+    <%= f.label :franchise %>
+    <%= f.text_field :franchise_id %>
   </div>
 
   <div class="form-actions">
