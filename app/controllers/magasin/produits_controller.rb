@@ -1,7 +1,7 @@
-class Magasin::ProduitController < ApplicationController
+class Magasin::ProduitsController < ApplicationController
 
 	def index
-		@produits = Produits.all
+		@produits = Produit.all
 	end
 	
 	private

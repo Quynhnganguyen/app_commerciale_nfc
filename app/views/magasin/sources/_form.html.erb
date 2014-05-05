@@ -1,0 +1,10 @@
+<%= form_for [:magasin, @context, @source] do |f| %>
+
+  <div class="form-group">
+    <%= f.label :source %>
+  	<%= f.text_field :pays %>
+
+  </div>
+ 
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

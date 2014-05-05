@@ -8,12 +8,23 @@
   <thead>
     <tr>
       <th >Nom du type</th>
+      <th >Nombre de produit</th>
+      <th >Links</th>
     </tr>
   </thead>
   <tbody>
     <% @types.each do |t| %>
       <tr>
         <td><%= t.type_produit %></td>
+        <td><%= t.produit.count %></td>
+        <td>
+        	<li class = "icon-edit">
+        		<%= link_to " Edit", edit_magasin_magasin_type_de_produit_path(t.magasin_id,t)%>
+        	</li> &nbsp; &nbsp; &nbsp;
+        	<li class = "icon-trash">
+        		<%= link_to " Delete", magasin_magasin_type_de_produit_path(t.magasin_id,t), :method => 'delete'%>
+        	</li>
+    	</td>
       </tr>
     <% end %>
   </tbody>

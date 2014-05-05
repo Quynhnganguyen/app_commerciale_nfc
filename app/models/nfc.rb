@@ -1,3 +1,3 @@
 class Nfc < ActiveRecord::Base
-	belongs_to :produit
+	has_one :produit
 end

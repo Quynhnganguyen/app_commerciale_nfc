@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :magasin do
   get 'type_de_produits/index'
     resources :magasin do 
-      resources :type_de_produits, only: [:new, :create]
+      resources :type_de_produits, only: [:new, :create, :edit, :update, :destroy]
     end
   end
 
@@ -12,17 +12,25 @@ Rails.application.routes.draw do
   end
 
   namespace :magasin do
-  get 'sources/index'
+    get 'sources/index'
+    resources :magasin do 
+      resources :sources, only: [:new, :create, :edit, :update, :destroy]
+    end
   end
 
   namespace :magasin do
   get 'franchises/index'
   end
 
+  namespace :magasin do
+    get 'produits/index'
+    get 'magasins/index'
+
+  end
   devise_for :vendeurs
 
   namespace :admin do
-    get 'franchises/index'
+    
     get 'magasin/index'
     get 'franchises/new'
     post 'franchises/create'
@@ -31,22 +39,14 @@ Rails.application.routes.draw do
       resources :magasin, only: [:new, :create]
     end
 
+    get 'franchises/index'
     resources :magasin do 
       resources :vendeurs, only: [:new, :create]
     end
 
   end
 
-  namespace :magasin do
-    get 'produit/index'
-    get 'magasins/index'
-    get 'vendeurs/index'
-
-  end
-
-  namespace :admin do
-    
-  end
+  
 
   get 'magasins/index'
 

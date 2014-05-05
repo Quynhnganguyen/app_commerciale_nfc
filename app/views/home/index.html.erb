@@ -10,7 +10,7 @@
 
 <% elsif vendeur_signed_in? %>
 
-    <h3>Gestion de Magasin <%= current_vendeur.magasin.try(:nom_magasin) %></h3>
+    <h3>Bienvenue sur l'espace de gestion de votre magasin! <%= current_vendeur.magasin.try(:nom_magasin) %></h3>
 
 <% else%>
 

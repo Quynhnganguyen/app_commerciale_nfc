@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504225828) do
+ActiveRecord::Schema.define(version: 20140505135838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,14 +121,20 @@ ActiveRecord::Schema.define(version: 20140504225828) do
   end
 
   create_table "produits", force: true do |t|
-    t.string   "nom_produit", null: false
-    t.float    "prix",        null: false
+    t.string   "nom_produit",        null: false
+    t.float    "prix",               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "magasin_id"
+    t.integer  "source_id"
+    t.integer  "type_de_produit_id"
+    t.integer  "nfc_id"
   end
 
   add_index "produits", ["magasin_id"], name: "index_produits_on_magasin_id", using: :btree
+  add_index "produits", ["nfc_id"], name: "index_produits_on_nfc_id", using: :btree
+  add_index "produits", ["source_id"], name: "index_produits_on_source_id", using: :btree
+  add_index "produits", ["type_de_produit_id"], name: "index_produits_on_type_de_produit_id", using: :btree
 
   create_table "sources", force: true do |t|
     t.string   "pays",       null: false
