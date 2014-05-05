@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   namespace :magasin do
   get 'type_de_produits/index'
+    resources :magasin do 
+      resources :type_de_produits, only: [:new, :create]
+    end
   end
 
   namespace :magasin do

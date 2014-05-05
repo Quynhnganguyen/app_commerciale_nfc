@@ -4,7 +4,7 @@ class Magasin::MagasinsController < ApplicationController
 
   		@vendeur = vendeur
   		# @magasin = Magasin.all
-      	@magasin = Magasin.find(@vendeur.magasin_id)
+      @magasin = Magasin.find(@vendeur.magasin_id)
   end
 
 private
