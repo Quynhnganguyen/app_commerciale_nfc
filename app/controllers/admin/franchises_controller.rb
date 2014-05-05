@@ -8,13 +8,17 @@ class Admin::FranchisesController < ApplicationController
     @franchise = Franchise.new
   end
  
+  def show
+    @franchises = Franchise.all
+  end
+
   def create
     @franchise = Franchise.new(franchise_params)
  
     if @franchise.save
       redirect_to :action => 'index', notice: "The franchise has been successfully created."
   	else
-  	 redirect_to :action => 'index'
+  	 redirect_to :action => 'new'
     end
   end
 

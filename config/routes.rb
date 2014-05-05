@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   namespace :magasin do
   get 'nfcs/index'
+  resources :magasin do 
+      resources :nfcs, only: [:new, :create, :edit, :update]
+    end
   end
 
   namespace :magasin do
@@ -24,26 +27,33 @@ Rails.application.routes.draw do
 
   namespace :magasin do
     get 'produits/index'
-    get 'magasins/index'
-
+    get 'magasins/index' 
+    resources :magasin do
+      resources :produits, only: [:new, :create, :show, :edit, :update, :destroy]
+    end
   end
+
+
   devise_for :vendeurs
 
   namespace :admin do
     
     get 'magasin/index'
-    get 'franchises/new'
-    post 'franchises/create'
 
     resources :franchises do 
       resources :magasin, only: [:new, :create]
     end
 
-    get 'franchises/index'
     resources :magasin do 
       resources :vendeurs, only: [:new, :create]
     end
 
+  end
+
+  namespace :admin do
+    get 'franchises/index'
+    get 'franchises/new'
+    post 'franchises/create'
   end
 
   

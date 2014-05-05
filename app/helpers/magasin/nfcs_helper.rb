@@ -1,2 +1,0 @@
-module Magasin::NfcsHelper
-end
