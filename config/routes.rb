@@ -22,9 +22,14 @@ Rails.application.routes.draw do
   devise_for :vendeurs
 
   namespace :admin do
+    get 'franchises/index'
     get 'magasin/index'
-    get 'magasin/new'
-    post 'magasin/create'
+    get 'franchises/new'
+    post 'franchises/create'
+
+    resources :franchises do 
+      resources :magasin, only: [:new, :create]
+    end
 
     resources :magasin do 
       resources :vendeurs, only: [:new, :create]

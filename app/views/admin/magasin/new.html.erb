@@ -1,4 +1,4 @@
-<h2>Create new magasin</h2>
+<h2>Create new magasin for Franchise <%= @context.nom_entreprise %> </h2>
 
 <%= form_for @magasin, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
   <div class="form-inputs">
@@ -7,13 +7,10 @@
     
     <%= f.label :adresse_magasin %>
     <%= f.text_field :adresse_magasin %>
-
-    <%= f.label :franchise %>
-    <%= f.text_field :franchise_id %>
   </div>
 
   <div class="form-actions">
-    <%= f.submit :create %>
+    <%= f.submit :Create %>
   </div>
 <% end %>
 
