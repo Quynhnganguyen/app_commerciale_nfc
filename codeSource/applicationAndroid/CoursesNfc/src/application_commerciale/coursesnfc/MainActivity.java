@@ -21,12 +21,10 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		nomUtilisateur = (EditText) findViewById(R.id.nomUtilisateur);
-		nomUtilisateur.setHint("Utilisateur");
 		motDePasse = (EditText) findViewById(R.id.motDePasse);
-		motDePasse.setHint("Mot de passe");
 		boutonConnexion = (Button) findViewById(R.id.boutonConnexion);
-		boutonConnexion.setText("Connexion");
 		boutonConnexion.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -40,8 +38,8 @@ public class MainActivity extends Activity {
 			}
 
 		});
+		
 		inscription  = (TextView) findViewById (R.id.inscription);
-		inscription.setText("Pas encore inscrit? Inscrivez-vous de suite!");
 		inscription.setOnClickListener(new OnClickListener(){
 
 			@Override

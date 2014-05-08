@@ -52,6 +52,8 @@ public class MenuActivity extends Activity {
 		case R.id.item6:
 			return true;
 		case R.id.item7:
+			intent = new Intent(MenuActivity.this,ComparaisonActivity.class);
+			startActivity(intent);
 			return true;
 		}
 

@@ -18,7 +18,7 @@ public class ListeNoireActivity extends MenuActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_liste_noire);
 		listeNoire = (ListView) findViewById(R.id.listeNoire);
-		  listeNoire.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		listeNoire.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 			String[][] lesProduitsNoirs = new String[][] {
 					{ "Produit 1", "Magasin 1" },
 					{ "Produit 2", "Magasin 1"},
