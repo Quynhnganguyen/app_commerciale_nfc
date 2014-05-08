@@ -49,7 +49,7 @@ public class AccueilActivity extends MenuActivity {
 		  });
 		  
 		  listeProduits = (ListView) findViewById(R.id.listeProduits);
-		  listeProduits.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		  listeProduits.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 			String[][] lesProduits = new String[][] {
 					{ "Produit 1", "2€" },
 					{ "Produit 2", "3€" },
@@ -70,13 +70,13 @@ public class AccueilActivity extends MenuActivity {
 			}
 
 			 adapter = new SimpleAdapter(this, produits,
-					android.R.layout.simple_list_item_2, new String[] { "text1",
+					android.R.layout.simple_list_item_multiple_choice, new String[] { "text1",
 							"text2" }, new int[] { android.R.id.text1,
 							android.R.id.text2 });
 			listeProduits.setAdapter(adapter);
 
 		
-		
+			
 	}
 
 
