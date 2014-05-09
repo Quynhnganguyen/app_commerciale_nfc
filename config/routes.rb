@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+    post 'clients/sign_in'
+  end
+
   namespace :magasin do
   get 'type_de_produits/index'
     resources :magasin do 
