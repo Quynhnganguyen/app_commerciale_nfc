@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#CEE3F6"
+    android:orientation="vertical" >
+
+	
+	<TextView
+       android:id="@+id/texteComparaison"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/texteComparaison"
+       android:layout_alignParentTop="true"    
+	/>
+	   
+	<Spinner
+	      android:id="@+id/typeDeComparaison"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/texteComparaison"
+	      android:layout_alignParentRight="true"  
+	/> 
+	
+	<TextView
+       android:id="@+id/produit1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/produit1"
+       android:textSize="15sp"
+       android:layout_above="@+id/produit2"
+       android:layout_centerHorizontal="true"
+      
+	/>
+	  
+   	<TextView
+       android:id="@+id/produit2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/produit2"
+       android:textSize="15sp"
+       android:layout_above="@+id/propositionDeScannerProduit"
+       android:layout_centerHorizontal="true"
+       
+    />
+   
+   	<TextView
+       android:id="@+id/propositionDeScannerProduit"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dp"
+       android:text="@string/propositionDeScannerProduit"
+       android:textColor="#B9121B"
+       android:textSize="20sp"
+       android:textColorHighlight="#000000"
+       android:drawableBottom="#B9121B"
+       android:layout_centerInParent="true"
+       android:layout_centerHorizontal="true"
+       
+    />
+   	<TextView
+       android:id="@+id/meilleurProduit"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/meilleurProduit"
+       android:visibility="gone"
+       android:layout_below="@+id/propositionDeScannerProduit"
+       android:layout_centerHorizontal="true"
+    />
+	
+   	
+		
+	<Button
+	     android:id="@+id/boutonComparaison"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:layout_marginLeft="10dp"
+	     android:text="@string/boutonComparaison" 
+	     android:layout_alignParentBottom="true"/>
+	
+	<Button
+	     android:id="@+id/boutonAcheterMeilleurProduit"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:layout_marginRight="10dp"
+	     android:layout_toRightOf="@+id/boutonComparaison"
+	     android:text="@string/boutonAcheterMeilleurProduit"
+	     android:layout_alignParentBottom="true" />
+	 </RelativeLayout>
