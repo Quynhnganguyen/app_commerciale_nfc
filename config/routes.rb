@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     post 'clients/sign_in'
+    delete 'clients/sign_out' 
+    get 'clients/liste_magasins'
+    get 'clients/liste_produits'
   end
 
   namespace :magasin do
