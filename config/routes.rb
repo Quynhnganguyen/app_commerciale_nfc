@@ -58,6 +58,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    get 'clients/index'
     get 'franchises/index'
     get 'franchises/new'
     post 'franchises/create'

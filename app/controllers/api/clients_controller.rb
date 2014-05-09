@@ -17,6 +17,10 @@ class Api::ClientsController < ApplicationController
     render text: 'Logout success'
   end
 
+  def sign_up
+
+  end
+
   def liste_magasins
     @magasins = Magasin.all
     results = @magasins.map {|m| {
@@ -39,5 +43,8 @@ class Api::ClientsController < ApplicationController
                   :nfc => p.nfc_id,
                   :magasin => p.magasin.nom_magasin}}
     render json: results
+  end
+
+  def liste_sources
   end
 end

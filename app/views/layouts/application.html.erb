@@ -61,6 +61,7 @@
 
                   <li><%= link_to 'Edit account', edit_admin_registration_path %></li>
                   <li><%= link_to 'Logout', destroy_admin_session_path, :method=>'delete' %></li>
+                  <li><%= link_to "New Admin", new_registration_path(Admin) %></li>
                 
                   <% elsif vendeur_signed_in? %>
 
@@ -70,6 +71,7 @@
                   <% else %>
 
                     <li><%= link_to 'Client', new_client_session_path %></li>
+                    <li><%= link_to "Sign up", new_registration_path(Client) %></li>
                     <li><%= link_to 'Admin', new_admin_session_path %></li>              
                     <li><%= link_to 'Magasin', new_vendeur_session_path %></li>
                  <!--  <li><%= link_to 'Logout', destroy_admin_session_path, :method=>'delete' %></li>
@@ -135,7 +137,7 @@
                   <li class="nav-header">Sidebar</li>
                   <li><%= link_to "Magasins", admin_magasin_index_path %></li>
                   <li><%= link_to "Franchises", admin_franchises_index_path  %></li>
-                  <li><%= link_to "Link3", "/path3"  %></li>
+                  <li><%= link_to "Clients", admin_clients_index_path  %></li>
                 </ul>
               </div><!--/.well -->
             </div><!--/span-->
@@ -167,8 +169,6 @@
                 <ul class="nav nav-list">
                   <li class="nav-header">Sidebar</li>
                   <li><%= link_to "Magasin", magasins_index_path %></li>
-                  <li><%= link_to "Link2", "/path2"  %></li>
-                  <li><%= link_to "Link3", "/path3"  %></li>
                 </ul>
               </div><!--/.well -->
             </div><!--/span-->
