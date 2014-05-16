@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#CEE3F6"
+    android:orientation="vertical" >
+       
+    <ListView
+        android:id="@+id/listeNoire"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dip" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dip" >
+    </TextView>  
+
+        
+
+</RelativeLayout> 
+
+	

@@ -26,10 +26,7 @@
             android:name="application_commerciale.coursesnfc.Accueil"
             android:label="@string/title_activity_accueil" >
         </activity>
-        <activity
-            android:name="application_commerciale.coursesnfc.Magasins"
-            android:label="@string/title_activity_magasins" >
-        </activity>
+        
         <activity
             android:name="application_commerciale.coursesnfc.AccueilActivity"
             android:label="@string/title_activity_accueil" >
@@ -53,6 +50,10 @@
         <activity
             android:name="application_commerciale.coursesnfc.InscriptionActivity"
             android:label="@string/title_activity_inscription" >
+        </activity>
+        <activity
+            android:name="application_commerciale.coursesnfc.ComparaisonActivity"
+            android:label="@string/title_activity_comparaison" >
         </activity>
     </application>
 
