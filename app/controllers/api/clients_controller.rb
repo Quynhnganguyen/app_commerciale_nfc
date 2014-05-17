@@ -17,22 +17,48 @@ class Api::ClientsController < ApplicationController
     render text: 'Logout success'
   end
 
-  def sign_up
+  # def sign_up
 
-  end
+  # end
 
+  #api/clients/liste_magasins
   def liste_magasins
     @magasins = Magasin.all
     results = @magasins.map {|m| {
-             
                   :magasin_id => m.id,
                   :magasin_nom => m.nom_magasin, 
                   :magasin_addresse => m.adresse_magasin}}
     render json: results
   end
 
-  def liste_produits #consulte les produit par magasin
+  def produits_magasin #consulte les produit par magasin
     @produits = Produit.where(magasin_id: params[:magasin_id])
+    results = @produits.map {|p| {
+                  :produit_id => p.id,
+                  :produit_nom => p.nom_produit, 
+                  :nombre => p.nombre,
+                  :source => p.source.pays,
+                  :type => p.type_de_produit.type_produit,
+                  :nfc => p.nfc_id,
+                  :magasin => p.magasin.nom_magasin}}
+    render json: results
+  end
+
+  def produits_type #consulte les produit par type
+    @produits = Produit.where(type_de_produit_id: params[:type_de_produit_id])
+    results = @produits.map {|p| {
+                  :produit_id => p.id,
+                  :produit_nom => p.nom_produit, 
+                  :nombre => p.nombre,
+                  :source => p.source.pays,
+                  :type => p.type_de_produit.type_produit,
+                  :nfc => p.nfc_id,
+                  :magasin => p.magasin.nom_magasin}}
+    render json: results
+  end
+
+  def produits_source #consulte les produit par source
+    @produits = Produit.where(source_id: params[:source_id])
     results = @produits.map {|p| {
                   :produit_id => p.id,
                   :produit_nom => p.nom_produit, 
@@ -46,7 +72,7 @@ class Api::ClientsController < ApplicationController
 
   def liste_sources
     @sources = Source.where(magasin_id: params[:magasin_id])
-    results = @sourses.map {|p| {
+    results = @sources.map {|p| {
                   :source_id => p.id,
                   :source => p.pays, 
                   :magasin => p.magasin.nom_magasin}}
@@ -58,6 +84,20 @@ class Api::ClientsController < ApplicationController
     results = @types.map {|p| {
                   :type_id => p.id,
                   :type => p.type_produit, 
+                  :magasin => p.magasin.nom_magasin}}
+    render json: results
+  end
+
+  #api/clients/scan_nfc
+  def scan_nfc
+    @produit = Produit.where(nfc_id: params[:nfc_id])
+    results = @produit.map {|p| {
+                  :produit_id => p.id,
+                  :produit_nom => p.nom_produit, 
+                  :nombre => p.nombre,
+                  :source => p.source.pays,
+                  :type => p.type_de_produit.type_produit,
+                  :nfc => p.nfc_id,
                   :magasin => p.magasin.nom_magasin}}
     render json: results
   end

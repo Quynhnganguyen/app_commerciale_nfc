@@ -2,22 +2,17 @@
 <p>Find me in app/views/client/index.html.erb</p>
 
 <h4> Chercher les produits</h4>
-<%= form_for [:client, ] do |f| %>
 
   <div class="form-group">
-
-    <%= f.label :type %>
-    <%= f.collection_select(:magasin_id, Magasin.all) %>
-    <%= f.label :type %>
-    <%= f.collection_select(:source_id, TypeDeProduit.all)%>
-    <%= f.label :type %>
-    <%= f.collection_select(:type_de_produit_id, TypeDeProduit.all) %>
+    <%= select_tag(:city_id, '<option value=""></option>') %>
+    <%= options_for_select([['Lisbon', 1], ['Madrid', 2]]) %>
+     <% @produits.each do |p| %>
+      <% end %>
     
 
   </div>
- 
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+
+
 
 <table class="table table-bordered">
   <thead>

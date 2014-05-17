@@ -1,8 +1,25 @@
-class ClientsController < ApplicationController
+class Client::ClientsController < ApplicationController
   def index
   	@magasins = Magasin.all 
   end
 
+  def liste_sources
+    @sources = Source.where(magasin_id: params[:magasin_id])
+    results = @sourses.map {|p| {
+                  :source_id => p.id,
+                  :source => p.pays, 
+                  :magasin => p.magasin.nom_magasin}}
+    render json: results
+  end
+
+  def liste_types
+    @types = TypeDeProduit.where(magasin_id: params[:magasin_id])
+    results = @types.map {|p| {
+                  :type_id => p.id,
+                  :type => p.type_produit, 
+                  :magasin => p.magasin.nom_magasin}}
+    render json: results
+  end
   def liste_magasins
     @magasins = Magasin.all
     results = @magasins.map {|m| {

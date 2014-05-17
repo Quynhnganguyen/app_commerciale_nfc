@@ -4,7 +4,12 @@ Rails.application.routes.draw do
     post 'clients/sign_in'
     delete 'clients/sign_out' 
     get 'clients/liste_magasins'
-    get 'clients/liste_produits'
+    post 'clients/produits_magasin'
+    post 'clients/produits_type'
+    post 'clients/produits_source'
+    post 'clients/liste_types'
+    post 'clients/liste_sources'
+    post 'clients/scan_nfc'
   end
 
   namespace :magasin do
@@ -64,7 +69,11 @@ Rails.application.routes.draw do
     post 'franchises/create'
   end
 
-  
+  namespace :client do
+    get 'clients/index' => 'clients#index'
+    get 'clients/index' => 'clients#liste_produits'
+    get 'clients/index' => 'clients#liste_magasins'
+  end
 
   get 'magasins/index'
   
