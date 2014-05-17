@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post 'clients/liste_types'
     post 'clients/liste_sources'
     post 'clients/scan_nfc'
+    post 'clients/show_produit'
   end
 
   namespace :magasin do

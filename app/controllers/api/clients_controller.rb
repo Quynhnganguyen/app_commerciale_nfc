@@ -22,7 +22,7 @@ class Api::ClientsController < ApplicationController
   # end
 
   #api/clients/liste_magasins
-  def liste_magasins
+  def liste_magasins # liste magasins
     @magasins = Magasin.all
     results = @magasins.map {|m| {
                   :magasin_id => m.id,
@@ -35,12 +35,8 @@ class Api::ClientsController < ApplicationController
     @produits = Produit.where(magasin_id: params[:magasin_id])
     results = @produits.map {|p| {
                   :produit_id => p.id,
-                  :produit_nom => p.nom_produit, 
-                  :nombre => p.nombre,
-                  :source => p.source.pays,
-                  :type => p.type_de_produit.type_produit,
-                  :nfc => p.nfc_id,
-                  :magasin => p.magasin.nom_magasin}}
+                  :produit_nom => p.nom_produit
+                  }}
     render json: results
   end
 
@@ -48,12 +44,8 @@ class Api::ClientsController < ApplicationController
     @produits = Produit.where(type_de_produit_id: params[:type_de_produit_id])
     results = @produits.map {|p| {
                   :produit_id => p.id,
-                  :produit_nom => p.nom_produit, 
-                  :nombre => p.nombre,
-                  :source => p.source.pays,
-                  :type => p.type_de_produit.type_produit,
-                  :nfc => p.nfc_id,
-                  :magasin => p.magasin.nom_magasin}}
+                  :produit_nom => p.nom_produit
+                  }}
     render json: results
   end
 
@@ -61,12 +53,8 @@ class Api::ClientsController < ApplicationController
     @produits = Produit.where(source_id: params[:source_id])
     results = @produits.map {|p| {
                   :produit_id => p.id,
-                  :produit_nom => p.nom_produit, 
-                  :nombre => p.nombre,
-                  :source => p.source.pays,
-                  :type => p.type_de_produit.type_produit,
-                  :nfc => p.nfc_id,
-                  :magasin => p.magasin.id}}
+                  :produit_nom => p.nom_produit
+                  }}
     render json: results
   end
 
@@ -91,6 +79,19 @@ class Api::ClientsController < ApplicationController
   #api/clients/scan_nfc
   def scan_nfc
     @produit = Produit.where(nfc_id: params[:nfc_id])
+    results = @produit.map {|p| {
+                  :produit_id => p.id,
+                  :produit_nom => p.nom_produit, 
+                  :nombre => p.nombre,
+                  :source => p.source.pays,
+                  :type => p.type_de_produit.type_produit,
+                  :nfc => p.nfc_id,
+                  :magasin => p.magasin.nom_magasin}}
+    render json: results
+  end
+
+  def show_produit #information d'un produit
+    @produit = Produit.where(id: params[:id])
     results = @produit.map {|p| {
                   :produit_id => p.id,
                   :produit_nom => p.nom_produit, 
