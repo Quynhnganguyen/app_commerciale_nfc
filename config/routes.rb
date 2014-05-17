@@ -67,6 +67,7 @@ Rails.application.routes.draw do
   
 
   get 'magasins/index'
+  
 
   devise_for :admins
   devise_for :clients
