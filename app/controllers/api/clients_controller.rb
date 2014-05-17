@@ -27,7 +27,7 @@ class Api::ClientsController < ApplicationController
     results = @magasins.map {|m| {
                   :magasin_id => m.id,
                   :magasin_nom => m.nom_magasin, 
-                  :magasin_addresse => m.adresse_magasin}}
+                  :magasin_adresse => m.adresse_magasin}}
     render json: results
   end
 
@@ -66,7 +66,7 @@ class Api::ClientsController < ApplicationController
                   :source => p.source.pays,
                   :type => p.type_de_produit.type_produit,
                   :nfc => p.nfc_id,
-                  :magasin => p.magasin.nom_magasin}}
+                  :magasin => p.magasin.id}}
     render json: results
   end
 
