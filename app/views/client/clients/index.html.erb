@@ -1,0 +1,35 @@
+<h1>Client#index</h1>
+<p>Find me in app/views/client/index.html.erb</p>
+
+<h4> Chercher les produits</h4>
+<%= form_for [:client, ] do |f| %>
+
+  <div class="form-group">
+
+    <%= f.label :type %>
+    <%= f.collection_select(:magasin_id, Magasin.all) %>
+    <%= f.label :type %>
+    <%= f.collection_select(:source_id, TypeDeProduit.all)%>
+    <%= f.label :type %>
+    <%= f.collection_select(:type_de_produit_id, TypeDeProduit.all) %>
+    
+
+  </div>
+ 
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th >Nom du magasin</th>
+      <th >Adresse du magasin</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+  </tbody>
+</table>
