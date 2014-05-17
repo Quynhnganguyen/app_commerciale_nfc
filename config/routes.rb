@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   end
 
   namespace :magasin do
-  get 'franchises/index'
+    get 'franchises/index'
   end
 
   namespace :magasin do
@@ -70,9 +70,10 @@ Rails.application.routes.draw do
   end
 
   namespace :client do
-    get 'clients/index' => 'clients#index'
-    get 'clients/index' => 'clients#liste_produits'
-    get 'clients/index' => 'clients#liste_magasins'
+    get 'magasins/index'
+    post 'produits/index'
+    post 'type_de_produits/index'
+    post 'sources/index'
   end
 
   get 'magasins/index'

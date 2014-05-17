@@ -1,0 +1,23 @@
+<h1>Client::Magasins#index</h1>
+
+<h4> Infomations of magasin </h4>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th >Nom du magasin</th>
+      <th >Adresse du magasin</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+    <% @magasins.each do |e| %>
+      <tr>
+        <td><%= link_to e.nom_magasin, client_produits_index_path(magasin_id: e.id), :method => 'post'%></td>
+        
+        <td><%= e.adresse_magasin %></td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>

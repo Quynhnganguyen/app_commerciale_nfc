@@ -1,9 +1,7 @@
 class Magasin::MagasinsController < ApplicationController
   
   def index
-
   		@vendeur = vendeur
-  		# @magasin = Magasin.all
       @magasin = Magasin.find(@vendeur.magasin_id)
   end
 
