@@ -13,7 +13,6 @@
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_inscription">Inscription</string>
     <string name="title_activity_comparaison">Comparer deux Produits</string>
-    
     <string name="menuAccueil">Accueil</string>
     <string name="menuMagasins">Liste des magasins</string>
     <string name="menuProduitsAAcheter">Produits à acheter</string>
@@ -21,26 +20,25 @@
     <string name="menuListeNoire">Liste noire</string>
     <string name="menuScannerUnProduit">Scanner un Produit</string>
     <string name="menuComparerDeuxProduits">Comparer deux Produits</string>
-    
     <string name="utilisateur">Utilisateur</string>
     <string name="motDePasse">Mot de passe</string>
     <string name="boutonConnexion">Connexion</string>
     <string name="inscription">Pas encore inscrit? Inscrivez-vous de suite!</string>
-    
     <string name="nom">Nom</string>
     <string name="prenom">Prénom</string>
     <string name="adresseMail">Adresse Email</string>
     <string name="login">Login</string>
     <string name="mdp">Mot de passe</string>
     <string name="boutonValiderInscription">Valider Inscription</string>
-    
     <string name="texteComparaison">"Comparer par rapport à la/aux" </string>
-   	<string name="produit1">Produit 1?</string>
-   	<string name="produit2">Produit 2</string>
-   	<string name="propositionDeScannerProduit">Scannez le premier produit</string>
-   	<string name="propositionDeScannerProduit2">Scannez le deuxième produit</string>
-   	<string name="meilleurProduit">Le meilleur produit est %s</string>
-   	<string name="boutonComparaison">Comparer</string>
-   	<string name="boutonAcheterMeilleurProduit">Acheter le meilleur produit</string>
-  
+    <string name="produit1">Produit 1?</string>
+    <string name="produit2">Produit 2</string>
+    <string name="propositionDeScannerProduit">Scannez le premier produit</string>
+    <string name="propositionDeScannerProduit2">Scannez le deuxième produit</string>
+    <string name="meilleurProduit">Le meilleur produit est %s</string>
+    <string name="boutonComparaison">Comparer</string>
+    <string name="boutonAcheterMeilleurProduit">Acheter le meilleur produit</string>
+    <string name="title_activity_test_ws">TestWSActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

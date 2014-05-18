@@ -6,7 +6,8 @@
 
     <uses-sdk
         android:minSdkVersion="7"
-        android:targetSdkVersion="7" />
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -26,7 +27,6 @@
             android:name="application_commerciale.coursesnfc.Accueil"
             android:label="@string/title_activity_accueil" >
         </activity>
-        
         <activity
             android:name="application_commerciale.coursesnfc.AccueilActivity"
             android:label="@string/title_activity_accueil" >
@@ -54,6 +54,10 @@
         <activity
             android:name="application_commerciale.coursesnfc.ComparaisonActivity"
             android:label="@string/title_activity_comparaison" >
+        </activity>
+        <activity
+            android:name="application_commerciale.coursesnfc.TestWSActivity"
+            android:label="@string/title_activity_test_ws" >
         </activity>
     </application>
 
