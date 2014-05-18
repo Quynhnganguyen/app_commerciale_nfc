@@ -22,6 +22,72 @@ SET time_zone = "+00:00";
 CREATE DATABASE `appliCommerciale` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `appliCommerciale`;
 
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `liste_favoris`
+--
+
+CREATE TABLE IF NOT EXISTS `liste_favoris` (
+  `id_liste_favoris` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id_liste_favoris`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+belong_to client
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `liste_noire`
+--
+
+CREATE TABLE IF NOT EXISTS `liste_noire` (
+  `id_liste_noire` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id_liste_noire`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+belong_to client
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `liste_produits_a_acheter`
+--
+
+CREATE TABLE IF NOT EXISTS `liste_courses` (
+  `id_liste_produits_a_acheter` int(10) unsigned NOT NULL,
+  `id_liste_courses_deja_faites` int(10) unsigned NOT NULL,
+  `active` boolean,
+  PRIMARY KEY (`id_liste_produits_a_acheter`),
+  KEY `id_liste_courses_deja_faites` (`id_liste_courses_deja_faites`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+belong_to clients
+:has_and_belongs_to_many :through courses_produit
+
+
+CREATE TABLE IF NOT EXISTS `courses_produit`(
+);
+
+belong_to produit
+belong_to liste_courses
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `magasin_client`
+--
+
+CREATE TABLE IF NOT EXISTS `magasin_client` (
+  `id_magasin` int(11) NOT NULL DEFAULT '0',
+  `id_client` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_magasin`,`id_client`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(in ruby, write belong_to)
+
+belong_to magasin
+belong_to client
+
 -- --------------------------------------------------------
 
 --
@@ -38,75 +104,14 @@ CREATE TABLE IF NOT EXISTS `client` (
   PRIMARY KEY (`id_client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-Create_table(:users) do |t|
+Create_table(:clients) do |t|
     t.string :nom_client,     null: false
     t.string :prenom_client,  null: false
     t.string :adresse_mail_client, null: false
    t.timestamps
 end
--- --------------------------------------------------------
 
---
--- Structure de la table `franchise`
---
-
-CREATE TABLE IF NOT EXISTS `franchise` (
-  `id_franchise` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entreprise` varchar(40) NOT NULL,
-  PRIMARY KEY (`id_franchise`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
-Create_table(:franchises) do |t|
-    t.string :nom_entreprise,     null: false
-   t.timestamps
-end
--- --------------------------------------------------------
-
---
--- Structure de la table `liste_courses_deja_faites`
---
-
-CREATE TABLE IF NOT EXISTS `liste_courses_deja_faites` (
-  `id_liste_courses_deja_faites` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id_liste_courses_deja_faites`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
--- --------------------------------------------------------
-
---
--- Structure de la table `liste_favoris`
---
-
-CREATE TABLE IF NOT EXISTS `liste_favoris` (
-  `id_liste_favoris` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id_liste_favoris`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `liste_noire`
---
-
-CREATE TABLE IF NOT EXISTS `liste_noire` (
-  `id_liste_noire` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id_liste_noire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `liste_produits_a_acheter`
---
-
-CREATE TABLE IF NOT EXISTS `liste_produits_a_acheter` (
-  `id_liste_produits_a_acheter` int(10) unsigned NOT NULL,
-  `id_liste_courses_deja_faites` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id_liste_produits_a_acheter`),
-  KEY `id_liste_courses_deja_faites` (`id_liste_courses_deja_faites`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+:has_and_belongs_to_many :through magasin_client
 -- --------------------------------------------------------
 
 --
@@ -125,20 +130,28 @@ CREATE TABLE IF NOT EXISTS `magasin` (
 Create_table(:magasins) do |t|
     t.string :nom_magasin,     null: false
     t.string :adresse_magasin, null: false
-    t.string :id_franchise, null: false
    t.timestamps
 end
+
+:has_and_belongs_to_many :through magasin_client
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `magasin_client`
+-- Structure de la table `franchise`
 --
 
-CREATE TABLE IF NOT EXISTS `magasin_client` (
-  `id_magasin` int(11) NOT NULL DEFAULT '0',
-  `id_client` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_magasin`,`id_client`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `franchise` (
+  `id_franchise` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entreprise` varchar(40) NOT NULL,
+  PRIMARY KEY (`id_franchise`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+Create_table(:franchises) do |t|
+    t.string :nom_entreprise,     null: false
+end
+
+has_many magasin
 
 -- --------------------------------------------------------
 
@@ -155,9 +168,42 @@ Create_table(:tags) do |t|
     t.string :id_nfc_tag,     null: false
    t.timestamps
 end
+belong_to magasin
+has_many produit
+-- --------------------------------------------------------
+-- Structure de la table `source`
+--
+
+CREATE TABLE IF NOT EXISTS `source` (
+  `id_source` int(11) unsigned NOT NULL,
+  `pays` varchar(40) NOT NULL,
+  PRIMARY KEY (`id_source`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+Create_table(:sources) do |t|
+    t.string :pays,  null: false
+   t.timestamps
+end
+
+has_many produit
 
 -- --------------------------------------------------------
 
+--
+-- Structure de la table `type_de_produit`
+--
+
+CREATE TABLE IF NOT EXISTS `type_de_produit` (
+  `id_type_produit` int(11) unsigned NOT NULL,
+  `type_de_produit` varchar(40) NOT NULL,
+  PRIMARY KEY (`id_type_produit`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+Create_table(:type_de_produits) do |t|
+    t.string :type_produit,     null: false
+end
+
+has_many produit
 --
 -- Structure de la table `produit`
 --
@@ -180,12 +226,11 @@ CREATE TABLE IF NOT EXISTS `produit` (
 Create_table(:produits) do |t|
     t.string :nom_produit,     null: false
     t.float :prix,  null: false
-    t.string :type_produit
-    t.string :source
-    t.string :magasin
-    t.string :id_nfc_tag, null: false
    t.timestamps
 end
+belong_to magasin
+has_many list ....
+:has_and_belongs_to_many :through courses_produit
 -- --------------------------------------------------------
 
 --
@@ -225,37 +270,7 @@ CREATE TABLE IF NOT EXISTS `produit_liste_produits_a_acheter` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `source`
---
 
-CREATE TABLE IF NOT EXISTS `source` (
-  `id_source` int(11) unsigned NOT NULL,
-  `pays` varchar(40) NOT NULL,
-  PRIMARY KEY (`id_source`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-Create_table(:sources) do |t|
-    t.string :pays,  null: false
-   t.timestamps
-end
-
--- --------------------------------------------------------
-
---
--- Structure de la table `type_de_produit`
---
-
-CREATE TABLE IF NOT EXISTS `type_de_produit` (
-  `id_type_produit` int(11) unsigned NOT NULL,
-  `type_de_produit` varchar(40) NOT NULL,
-  PRIMARY KEY (`id_type_produit`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-Create_table(:type_de_produits) do |t|
-    t.string :type_produit,     null: false
-   t.timestamps
-end
---
 -- Contraintes pour les tables exportées
 --
 

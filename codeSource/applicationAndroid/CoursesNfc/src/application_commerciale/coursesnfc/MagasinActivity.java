@@ -17,27 +17,53 @@ public class MagasinActivity extends MenuActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_magasin);
-		
-		 listeMagasins = (ListView) findViewById(R.id.listeMagasins);
+		listeMagasins = (ListView) findViewById(R.id.listeMagasins);
 		  listeMagasins.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-			String[][] lesMagasins = new String[][] {
-					{ "Magasin 1", "26 Place de la Nation 75012 Paris" },
-					{ "Magasin 2", "20 Rue du Chemin Vert 75011 Paris" },
-					{ "Magasin 3", "3 Rue de la Station 92600 Asnières-sur-Seine" } };
 
-			magasins = new ArrayList<HashMap<String, String>>();
+		magasins = new ArrayList<HashMap<String, String>>();
 
 			HashMap<String, String> unMagasin;
 
-			for (int i = 0; i < lesMagasins.length; i++) {
+		
+		String[][] lesMagasins = new String[][]
 
-				unMagasin = new HashMap<String, String>();
+		HttpClient httpclient = new DefaultHttpClient();
+			try {
+				HttpGet httpGet = new HttpGet(
+						"http://quiet-wildwood-3463.herokuapp.com/magasins/index?action=get");
+				HttpResponse httpresponse = httpclient.execute(httpGet);
+				HttpEntity httpentity = httpresponse.getEntity();
+				if (httpentity != null) {
+					InputStream inputstream = httpentity.getContent();
+					BufferedReader bufferedreader = new BufferedReader(
+							new InputStreamReader(inputstream));
+					StringBuilder strinbulder = new StringBuilder();
+					String ligne = bufferedreader.readLine();
+					while (ligne != null) {
+						strinbulder.append(ligne + "n");
+						ligne = bufferedreader.readLine();
+					}
+					bufferedreader.close();
+					
+					JSONArray ja = new JSONArray(strinbulder.toString());
+					List<String> allNames = new ArrayList<String>();
+					for (int i =0;i<ja.length();i++){
+						JSONObject actor = ja.optJSONObject(i);
+						String name = actor.getString("magasin_nom");
+						String adresse = actor.getString("magasin_adresse");
+	
+						unMagasin = new HashMap<String, String>();
 
-				unMagasin.put("text1", lesMagasins[i][0]);
+						unMagasin.put("text1", name);
 
-				unMagasin.put("text2", lesMagasins[i][1]);
-				magasins.add(unMagasin);
-			}
+						unMagasin.put("text2", adresse);
+						magasins.add(unMagasin);
+					}
+					
+				}
+			} catch (Exception e) {
+				Log.e(TAG, e.getMessage());
+	}
 
 			 adapter = new SimpleAdapter(this, magasins,
 					android.R.layout.simple_list_item_2, new String[] { "text1",
