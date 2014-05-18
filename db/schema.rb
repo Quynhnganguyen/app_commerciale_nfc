@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140509131414) do
+ActiveRecord::Schema.define(version: 20140518153435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,7 +65,12 @@ ActiveRecord::Schema.define(version: 20140509131414) do
   create_table "liste_acheters", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "client_id"
+    t.integer  "produit_id"
   end
+
+  add_index "liste_acheters", ["client_id"], name: "index_liste_acheters_on_client_id", using: :btree
+  add_index "liste_acheters", ["produit_id"], name: "index_liste_acheters_on_produit_id", using: :btree
 
   create_table "liste_coure_deja_faites", force: true do |t|
     t.datetime "created_at"
@@ -75,12 +80,22 @@ ActiveRecord::Schema.define(version: 20140509131414) do
   create_table "liste_favoris", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "produit_id"
+    t.integer  "client_id"
   end
+
+  add_index "liste_favoris", ["client_id"], name: "index_liste_favoris_on_client_id", using: :btree
+  add_index "liste_favoris", ["produit_id"], name: "index_liste_favoris_on_produit_id", using: :btree
 
   create_table "liste_noires", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "client_id"
+    t.integer  "produit_id"
   end
+
+  add_index "liste_noires", ["client_id"], name: "index_liste_noires_on_client_id", using: :btree
+  add_index "liste_noires", ["produit_id"], name: "index_liste_noires_on_produit_id", using: :btree
 
   create_table "magasin_clients", force: true do |t|
     t.datetime "created_at"

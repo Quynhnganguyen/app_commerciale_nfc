@@ -4,4 +4,5 @@ class Client < ActiveRecord::Base
   # include TokenAuthenticatable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+         has_many :liste_acheter
 end

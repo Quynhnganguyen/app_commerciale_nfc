@@ -1,4 +1,4 @@
-<h1>Produits in <%= @magasin.nom_magasin %></h1>
+<h1>Produits in the liste of buying of client <%= @client.name %></h1>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -20,10 +20,7 @@
         <td><%= e.prix %></td>
         <td><%= e.nombre %></td>
         <td>
-            <li class = "icon-plus">
-            <%= link_to "Acheter",  client_client_liste_acheters_path(client_id:current_client.id, produit_id: e.id), :method => 'post'%>
-          </li> &nbsp;
-          </li>
+          
         </td>
       </tr>
     <% end %>

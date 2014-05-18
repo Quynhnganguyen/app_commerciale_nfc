@@ -3,4 +3,8 @@ class Produit < ActiveRecord::Base
 
 	belongs_to :source
 	belongs_to :type_de_produit
+
+	has_many :liste_favoris
+	has_many :liste_noire
+	has_many :liste_acheter
 end

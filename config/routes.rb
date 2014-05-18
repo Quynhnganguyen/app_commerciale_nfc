@@ -75,6 +75,10 @@ Rails.application.routes.draw do
     post 'produits/index'
     post 'type_de_produits/index'
     post 'sources/index'
+    get 'liste_acheters/index'
+    resources :client do 
+      resources :liste_acheters, only: [:new, :create]
+    end
   end
 
   get 'magasins/index'
