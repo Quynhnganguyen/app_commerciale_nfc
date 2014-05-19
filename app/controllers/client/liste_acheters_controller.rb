@@ -1,7 +1,7 @@
 class Client::ListeAchetersController < ApplicationController
 	def index
 		@client = client
-		@produits= ListeAcheter.where(client_id: @client.id)
+		@listes= ListeAcheter.where(client_id: @client.id)
 	end
 
   def new
@@ -12,10 +12,14 @@ class Client::ListeAchetersController < ApplicationController
  
   def create
     @client = client
-    @achat = @client.liste_acheter.new(liste_acheter_params)
- 
-    if @achat.save
+    @produit = produit
+    @achat2 = @client.liste_acheter.create(client_id: @client.id, produit_id: @produit.id)
+    # @achat = @produit.liste_acheter.create(liste_acheter_params)
+ 	@achat2.save
+    if @achat2.save
        flash[:notice] =  "produit has been successfully added in liste à acheter."
+   else 
+   		flash[:notice] =  "erroooooo"
     end
   end
 
@@ -23,7 +27,7 @@ class Client::ListeAchetersController < ApplicationController
 
 private
   def liste_acheter_params
-    params.require(:liste_acheter).permit(:client_id, :produit_id)
+    params.require(:liste_acheter).permit(:client_id, :produit_id) if params[:liste_acheter]
   end
 
   def client
@@ -31,6 +35,13 @@ private
       id = current_client.id
       Client.find(current_client.id)
     end
+  end
+
+  def produit
+  	if params[:produit_id]
+      id = params[:produit_id]
+      Produit.find(params[:produit_id])
+  	end
   end
 
 end

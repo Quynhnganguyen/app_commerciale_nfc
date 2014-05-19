@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
 
+  namespace :client do
+  get 'liste_favorises/index'
+  resources :client do 
+      resources :liste_favorises, only: [:new, :create]
+    end
+  end
+  namespace :client do
+    get 'magasins/index'
+    post 'produits/index'
+    post 'type_de_produits/index'
+    post 'sources/index'
+    get 'liste_acheters/index'
+    resources :client do 
+      resources :liste_acheters, only: [:new, :create]
+    end
+  end
+
   namespace :api do
     post 'clients/sign_in'
     delete 'clients/sign_out' 
@@ -70,16 +87,7 @@ Rails.application.routes.draw do
     post 'franchises/create'
   end
 
-  namespace :client do
-    get 'magasins/index'
-    post 'produits/index'
-    post 'type_de_produits/index'
-    post 'sources/index'
-    get 'liste_acheters/index'
-    resources :client do 
-      resources :liste_acheters, only: [:new, :create]
-    end
-  end
+  
 
   get 'magasins/index'
   
