@@ -1,0 +1,18 @@
+<h2>Create new magasin for Franchise <%= @context.nom_entreprise %> </h2>
+
+<%= form_for @magasin, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <div class="form-inputs">
+    <%= f.label :nom_magasin %>
+  	<%= f.text_field :nom_magasin%>
+    
+    <%= f.label :adresse_magasin %>
+    <%= f.text_field :adresse_magasin %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit :Create %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', admin_magasin_index_path %>
+

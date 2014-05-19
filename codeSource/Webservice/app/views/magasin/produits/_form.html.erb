@@ -1,0 +1,25 @@
+<%= form_for [:magasin, @context, @produit] do |f| %>
+
+  <div class="form-group">
+    <%= f.label :nom %>
+  	<%= f.text_field :nom_produit %>
+
+  	<%= f.label :type %>
+  	<%= f.collection_select(:type_de_produit_id, TypeDeProduit.where(:magasin_id => @context.id), :id, :type_produit) %>
+
+  	<%= f.label :prix %>
+  	<%= f.text_field :prix %>
+
+  	<%= f.label :source %>
+  	<%= f.collection_select(:source_id, Source.where(:magasin_id => @context.id), :id, :pays) %>
+
+  	<%= f.label :nombre %>
+  	<%= f.text_field :nombre %>
+
+  	<%= f.label :nfc %>
+  	<%= f.text_field :nfc_id %>
+
+  </div>
+ 
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

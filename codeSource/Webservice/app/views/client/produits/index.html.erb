@@ -1,0 +1,35 @@
+<h1>Produits in <%= @magasin.nom_magasin %></h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th >Nom</th>
+      <th >Type</th>
+      <th >Source</th>
+      <th >Prix</th>
+      <th >Nombre</th>
+      <th >Detail</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+    <% @produits.each do |e| %>
+      <tr>
+        <td><%= e.nom_produit %></td>
+        <td><%= e.type_de_produit.type_produit %></td>
+        <td><%= e.source.pays %></td>
+        <td><%= e.prix %></td>
+        <td><%= e.nombre %></td>
+        <td>
+            <li class = "icon-plus">
+            <%= link_to "Buy",  client_client_liste_acheters_path(client_id: @client.id, produit_id: e.id), :method => 'post'%>
+          </li> &nbsp;
+          <li class = "icon-thumbs-up">
+            <%= link_to "Like",  client_client_liste_favorises_path(client_id: @client.id, produit_id: e.id), :method => 'post'%>
+          </li> &nbsp;
+          
+        </td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>
