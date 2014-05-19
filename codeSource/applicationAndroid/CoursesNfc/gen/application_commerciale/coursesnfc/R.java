@@ -1091,7 +1091,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050057;
+        public static final int action_settings=0x7f050058;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int adresseMail=0x7f05004b;
         public static final int always=0x7f05000b;
@@ -1117,13 +1117,13 @@ containing a value of this type.
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
         public static final int inscription=0x7f050054;
-        public static final int item1=0x7f050058;
-        public static final int item2=0x7f050059;
-        public static final int item3=0x7f05005a;
-        public static final int item4=0x7f05005b;
-        public static final int item5=0x7f05005c;
-        public static final int item6=0x7f05005d;
-        public static final int item7=0x7f05005e;
+        public static final int item1=0x7f050059;
+        public static final int item2=0x7f05005a;
+        public static final int item3=0x7f05005b;
+        public static final int item4=0x7f05005c;
+        public static final int item5=0x7f05005d;
+        public static final int item6=0x7f05005e;
+        public static final int item7=0x7f05005f;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
         public static final int listeDeroulanteMagasins=0x7f05003c;
@@ -1165,9 +1165,10 @@ containing a value of this type.
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
-        public static final int test1=0x7f050056;
+        public static final int test1=0x7f050057;
         public static final int text1=0x7f05003e;
         public static final int text2=0x7f05003f;
+        public static final int textView1=0x7f050056;
         public static final int texteComparaison=0x7f050040;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
@@ -1234,8 +1235,9 @@ containing a value of this type.
         public static final int activity_magasin=0x7f03001d;
         public static final int activity_main=0x7f03001e;
         public static final int activity_menu=0x7f03001f;
-        public static final int activity_test_ws=0x7f030020;
-        public static final int support_simple_spinner_dropdown_item=0x7f030021;
+        public static final int activity_test_nfc=0x7f030020;
+        public static final int activity_test_ws=0x7f030021;
+        public static final int support_simple_spinner_dropdown_item=0x7f030022;
     }
     public static final class menu {
         public static final int accueil=0x7f0c0000;
@@ -1247,7 +1249,8 @@ containing a value of this type.
         public static final int magasins=0x7f0c0006;
         public static final int main=0x7f0c0007;
         public static final int menu=0x7f0c0008;
-        public static final int test_w=0x7f0c0009;
+        public static final int test_nfc=0x7f0c0009;
+        public static final int test_w=0x7f0c000a;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1324,6 +1327,7 @@ containing a value of this type.
         public static final int title_activity_liste_noire=0x7f0a0015;
         public static final int title_activity_magasin=0x7f0a0013;
         public static final int title_activity_menu=0x7f0a0016;
+        public static final int title_activity_test_nfc=0x7f0a0034;
         public static final int title_activity_test_ws=0x7f0a0032;
         public static final int title_section1=0x7f0a0010;
         public static final int title_section2=0x7f0a0011;

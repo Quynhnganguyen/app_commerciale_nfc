@@ -39,7 +39,7 @@ public class MenuActivity extends Activity {
 			startActivity(intent);
 			return true;
 		case R.id.item3:
-			intent = new Intent(MenuActivity.this,TestWSActivity.class);
+			intent = new Intent(MenuActivity.this,TestNfcActivity.class);
 			startActivity(intent);
 			return true;
 		case R.id.item4:
