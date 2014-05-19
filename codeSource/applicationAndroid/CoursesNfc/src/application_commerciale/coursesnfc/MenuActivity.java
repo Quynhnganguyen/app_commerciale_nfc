@@ -39,8 +39,8 @@ public class MenuActivity extends Activity {
 			startActivity(intent);
 			return true;
 		case R.id.item3:
-			intent = new Intent(MenuActivity.this,TestNfcActivity.class);
-			startActivity(intent);
+			//intent = new Intent(MenuActivity.this,TestNfcActivity.class);
+			//startActivity(intent);
 			return true;
 		case R.id.item4:
 			intent = new Intent(MenuActivity.this,FavorisActivity.class);
@@ -51,6 +51,8 @@ public class MenuActivity extends Activity {
 			startActivity(intent);
 			return true;
 		case R.id.item6:
+			intent = new Intent(MenuActivity.this,InformationProduitActivity.class);
+			startActivity(intent);
 			return true;
 		case R.id.item7:
 			intent = new Intent(MenuActivity.this,ComparaisonActivity.class);

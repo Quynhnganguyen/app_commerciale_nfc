@@ -11,7 +11,7 @@ import android.widget.SimpleAdapter;
 
 public class FavorisActivity extends MenuActivity {
 	ListView listeFavoris;
-	List<HashMap<String, String>> produitsFavoris;
+	private List<HashMap<String, String>> produitsFavoris;
 	ListAdapter adapter;
 
 	@Override

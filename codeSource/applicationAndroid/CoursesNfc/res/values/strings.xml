@@ -38,8 +38,14 @@
     <string name="meilleurProduit">Le meilleur produit est %s</string>
     <string name="boutonComparaison">Comparer</string>
     <string name="boutonAcheterMeilleurProduit">Acheter le meilleur produit</string>
-    <string name="title_activity_test_ws">TestWSActivity</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_test_nfc">TestNfcActivity</string>
-
-</resources>
+    <string name="title_activity_information_produit">Informations Produit</string>
+    <string name="checkFavoris"> Liste favoris</string>
+	<string name="checkListeNoire"> Liste Noire</string>
+	<string name="intituleNomProduit">Nom :</string>
+	<string name="intitulePrixProduit">Prix:</string>
+	<string name="intituleTypeProduit">Type:</string>
+	<string name="intituleFranchise">Franchise:</string>
+	<string name="intituleSourceProduit">Source:</string>
+	<string name="scannerProduit">"Scannez votre produit!"</string>
+	</resources>

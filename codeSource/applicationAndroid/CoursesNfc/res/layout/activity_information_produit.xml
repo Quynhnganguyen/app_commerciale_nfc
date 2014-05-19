@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#040317"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <TextView
+        android:id="@+id/scannerProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/scannerProduit"
+        android:textColor="#B9121B"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/intituleNomProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scannerProduit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="@string/intituleNomProduit"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/nomProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/intituleNomProduit"
+        android:background="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/intitulePrixProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/intituleNomProduit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="@string/intitulePrixProduit"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/prixProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nomProduit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:id="@+id/intituleTypeProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/intitulePrixProduit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="@string/intituleTypeProduit"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/typeProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prixProduit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:id="@+id/intituleFranchise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/intituleTypeProduit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="@string/intituleFranchise"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/franchise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/typeProduit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:id="@+id/intituleSourceProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/intituleNomProduit"
+        android:layout_below="@+id/intituleFranchise"
+        android:text="@string/intituleSourceProduit"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/sourceProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/franchise"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp" />
+
+    <CheckBox
+        android:id="@+id/checkFavoris"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/intituleSourceProduit"
+        android:layout_marginBottom="5dp"
+        android:text="@string/checkFavoris"
+        android:textColor="#8FCF3C" />
+
+    <CheckBox
+        android:id="@+id/checkListeNoire"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkFavoris"
+        android:layout_marginBottom="5dp"
+        android:text="@string/checkListeNoire"
+        android:textColor="#B09F91" />
+
+</RelativeLayout>

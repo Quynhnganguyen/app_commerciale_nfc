@@ -28,6 +28,7 @@ public class MagasinActivity extends MenuActivity {
 	private List<HashMap<String, String>> listeMagasins;
 	private ListAdapter adapter;
 	public static final String TAG = "TAG_MAGASINS";
+	private String url ="http://quiet-wildwood-3463.herokuapp.com/api/clients/";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class MagasinActivity extends MenuActivity {
 
 	public void afficheListeMagasins() {
 		new MagasinTask()
-				.execute("http://quiet-wildwood-3463.herokuapp.com/magasins/index?action=get");
+				.execute(url+"liste_magasins");
 	}
 
 	private class MagasinTask extends AsyncTask<String, Void, String> {
@@ -58,8 +59,7 @@ public class MagasinActivity extends MenuActivity {
 			response = "Ca ne marche pas...";
 			HttpClient httpclient = new DefaultHttpClient();
 			try {
-				HttpGet httpGet = new HttpGet(
-						"http://quiet-wildwood-3463.herokuapp.com/magasins/index?action=get");
+				HttpGet httpGet = new HttpGet(url+"liste_magasins");
 				HttpResponse httpresponse = httpclient.execute(httpGet);
 				HttpEntity httpentity = httpresponse.getEntity();
 				if (httpentity != null) {
@@ -80,7 +80,7 @@ public class MagasinActivity extends MenuActivity {
 						JSONObject jSonObject = jSonArray.optJSONObject(i);
 						String nom = jSonObject.getString("magasin_nom");
 						String adresse = jSonObject
-								.getString("magasin_addresse");
+								.getString("magasin_adresse");
 					
 						lesMagasins[i][0]= nom;
 						lesMagasins[i][1]= adresse;
