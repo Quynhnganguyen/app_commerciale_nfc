@@ -40,5 +40,6 @@
     <string name="boutonAcheterMeilleurProduit">Acheter le meilleur produit</string>
     <string name="title_activity_test_ws">TestWSActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_test_nfc">TestNfcActivity</string>
 
 </resources>
