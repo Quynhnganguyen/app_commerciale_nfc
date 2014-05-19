@@ -1,9 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#000000"
-    android:orientation="vertical" >
-       
+    android:orientation="vertical"
+    android:background="#002F2F" >
+
     <ListView
         android:id="@+id/listeMagasins"
         android:layout_width="fill_parent"
@@ -14,7 +14,8 @@
         android:id="@+id/text1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:padding="10dip" >
+        android:padding="10dip" 
+       >
     </TextView>
 
     <TextView
@@ -22,10 +23,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:padding="10dip" >
-    </TextView>  
+    </TextView>
 
-        
-
-</RelativeLayout> 
-
-	
+</RelativeLayout>

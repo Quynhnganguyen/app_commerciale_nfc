@@ -18,7 +18,7 @@ public class AccueilActivity extends MenuActivity {
 	private String[] magasins = { "Magasin1", "Magasin2", "Magasin3" };
 	Spinner listeMagasins;
 	ListView listeProduits;
-	List<HashMap<String, String>> produits;
+	private List<HashMap<String, String>> produits;
 	ListAdapter adapter; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
