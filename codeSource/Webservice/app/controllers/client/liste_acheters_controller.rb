@@ -14,15 +14,24 @@ class Client::ListeAchetersController < ApplicationController
     @client = client
     @produit = produit
     @achat2 = @client.liste_acheter.create(client_id: @client.id, produit_id: @produit.id)
-    # @achat = @produit.liste_acheter.create(liste_acheter_params)
- 	@achat2.save
+ 	  @achat2.save
     if @achat2.save
        flash[:notice] =  "produit has been successfully added in liste à acheter."
    else 
    		flash[:notice] =  "erroooooo"
     end
   end
+  
+def destroy
+   @client = client
+    @type = @context.type_de_produit.find(params[:id])
+    @type.destroy
 
+    respond_to do |format|
+      format.html { redirect_to context_url(context) }
+      format.json { head :no_content }
+    end
+  end
 
 
 private
