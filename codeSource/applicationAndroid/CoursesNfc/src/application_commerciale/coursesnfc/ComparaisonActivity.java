@@ -59,4 +59,53 @@ public class ComparaisonActivity extends MenuActivity {
 
 	}
 
+	protected void onResume() {
+		super.onResume();
+		Intent intent = new Intent(this, this.getClass())
+				.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
+				intent, 0);
+		IntentFilter[] filters = null;
+		String[][] techLists = null;
+		nfcAdapter.enableForegroundDispatch(this, pendingIntent, filters,
+				techLists);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		nfcAdapter.disableForegroundDispatch(this);
+	}
+
+	private void resolveIntent(Intent intent) {
+		String action = intent.getAction();
+		if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
+			byte[] id = intent.getByteArrayExtra(NfcAdapter.EXTRA_ID);
+			String id_string = ByteArrayToHexString(id);
+				nomProduit.setText(id_string);
+		}
+	}
+
+	private String ByteArrayToHexString(byte[] inarray) {
+		int i, j, in;
+		String[] hex = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a",
+				"b", "c", "d", "e", "f" };
+		String out = "";
+
+		for (j = 0; j < inarray.length; ++j) {
+			in = (int) inarray[j] & 0xff;
+			i = (in >> 4) & 0x0f;
+			out += hex[i];
+			i = in & 0x0f;
+			out += hex[i];
+		}
+		return out;
+	}
+
+	@Override
+	public void onNewIntent(Intent intent) {
+		setIntent(intent);
+		resolveIntent(intent);
+	}
+
 }
