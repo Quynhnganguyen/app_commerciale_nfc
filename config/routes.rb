@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'produits/index'
+
   namespace :client do
   get 'liste_favorises/index'
   resources :client do 
