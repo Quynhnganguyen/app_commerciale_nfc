@@ -1,0 +1,26 @@
+<h1>Produits in <%= @magasin.nom_magasin %></h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th >Nom</th>
+      <th >Type</th>
+      <th >Source</th>
+      <th >Prix</th>
+      <th >Nombre</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+    <% @produits.each do |e| %>
+      <tr>
+        <td><%= e.nom_produit %></td>
+        <td><%= e.type_de_produit.type_produit %></td>
+        <td><%= e.source.pays %></td>
+        <td><%= e.prix %></td>
+        <td><%= e.nombre %></td>
+       
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>

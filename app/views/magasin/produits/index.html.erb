@@ -1,0 +1,39 @@
+
+
+
+<a><%= link_to "New Produit", new_magasin_magasin_produit_path(@vendeur) %></a>
+<h1>Produits in magasin <%= @vendeur.magasin.try(:nom_magasin) %></h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th >Nom</th>
+      <th >Prix</th>
+      <th >Type</th>
+      <th >Source</th>
+      <th >Nombre</th>
+      <th >Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @produits.each do |p| %>
+      <tr>
+        <td><%= p.nom_produit %></td>
+        <td><%= p.prix %></td>
+        <td><%= p.type_de_produit.try(:type_produit) %></td>
+        <td><%= p.source.try(:pays) %></td>
+        <td><%= p.nombre %></td>
+        <td>
+        	<li class = "icon-edit">
+        		<%= link_to " Edit", edit_magasin_magasin_produit_path(p.magasin_id, p)%>
+        	</li> &nbsp;
+        	<li class = "icon-trash">
+        		<%= link_to " Delete", magasin_magasin_produit_path(p.magasin_id, p), :method => 'delete'%>
+        	</li>&nbsp;
+          <li class = "icon-eye-open">
+            <%= link_to " Show", magasin_magasin_produit_path(p.magasin_id, p), :method => 'get'%>
+          </li>
+    	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,2 @@
+module Magasin::MagasinsHelper
+end

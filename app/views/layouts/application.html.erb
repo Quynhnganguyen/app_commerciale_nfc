@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "AchatRapidNfc" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="brand" href="#">Achat Rapid Nfc</a>
+
+          <div class="container nav-collapse">
+            <ul class="nav">
+
+              <% if client_signed_in? %>
+
+                <li><%= link_to 'Edit account', edit_client_registration_path %></li>
+                <li><%= link_to 'Logout', destroy_client_session_path, :method=>'delete' %></li>
+                
+                <% elsif admin_signed_in? %>
+
+                  <li><%= link_to 'Edit account', edit_admin_registration_path %></li>
+                  <li><%= link_to 'Logout', destroy_admin_session_path, :method=>'delete' %></li>
+                  <li><%= link_to "New Admin", new_registration_path(Admin) %></li>
+                
+                  <% elsif vendeur_signed_in? %>
+
+                    <li><%= link_to 'Edit account', edit_vendeur_registration_path %></li>
+                    <li><%= link_to 'Logout', destroy_vendeur_session_path, :method=>'delete' %></li>
+
+                  <% else %>
+
+                    <li><%= link_to 'Client', new_client_session_path %></li>
+                    <li><%= link_to "Sign up", new_registration_path(Client) %></li>
+                    <li><%= link_to 'Admin', new_admin_session_path %></li>              
+                    <li><%= link_to 'Magasin', new_vendeur_session_path %></li>
+                 <!--  <li><%= link_to 'Logout', destroy_admin_session_path, :method=>'delete' %></li>
+                    <li><%= link_to 'Logout', destroy_vendeur_session_path, :method=>'delete' %></li> -->
+                     
+
+              <% end %>
+
+              </ul>
+
+              <ul class="nav pull-right">
+
+                <% if client_signed_in? %>
+
+                  <li><a>Welcome client <%= current_client.name %></a></li>
+
+                <% elsif admin_signed_in? %>
+                    
+                    <li><a>Welcome admin <%= current_admin.name %></a></li>
+
+                <% elsif vendeur_signed_in? %>
+
+                    <li><a>Welcome vender <%= current_vendeur.name %> </a></li>
+
+                <% end %>
+
+              </ul>
+
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style = "padding-top: 50px;">
+        <div class="row">
+          <div class="span9">
+            <%= bootstrap_flash %>
+            <%= yield %>
+          </div>
+<!-- nav for Client -->
+          <% if client_signed_in? %>
+
+            <div class="span3">
+              <div class="well sidebar-nav">
+                <h3>Client</h3>
+                <ul class="nav nav-list">
+                  <li class="nav-header">Sidebar</li>
+                  <li><%= link_to "Magasins", client_magasins_index_path  %></li>
+                  <li><%= link_to "Liste Noire", client_produits_index_path  %></li>
+                  <li><%= link_to "Liste Fravorise", client_liste_favorises_index_path  %></li>
+                  <li><%= link_to "Liste à Acheter", client_liste_acheters_index_path  %></li>
+                </ul>
+              </div><!--/.well -->
+            </div><!--/span-->
+
+<!-- nav for Admin -->
+
+          <% elsif admin_signed_in? %>
+
+            <div class="span3">
+              <div class="well sidebar-nav">
+                <h3>Admin</h3>
+                <ul class="nav nav-list">
+                  <li class="nav-header">Sidebar</li>
+                  <li><%= link_to "Magasins", admin_magasin_index_path %></li>
+                  <li><%= link_to "Franchises", admin_franchises_index_path  %></li>
+                  <li><%= link_to "Clients", admin_clients_index_path  %></li>
+                </ul>
+              </div><!--/.well -->
+            </div><!--/span-->
+
+<!-- nav for Vendeur -->
+
+          <% elsif vendeur_signed_in? %>
+
+            <div class="span3">
+              <div class="well sidebar-nav">
+                <h3><%= current_vendeur.magasin.try(:nom_magasin) %></h3>
+                <ul class="nav nav-list">
+                  <li class="nav-header">Gestions</li>
+                  <li><%= link_to "Info", magasin_magasins_index_path  %></li>
+                  <li><%= link_to "Produits", magasin_produits_index_path  %></li>
+                  <li><%= link_to "Types of Produit", magasin_type_de_produits_index_path  %></li>
+                  <li><%= link_to "Sources", magasin_sources_index_path  %></li>
+                </ul>
+              </div><!--/.well -->
+            </div><!--/span-->
+
+          <% else %>
+
+<!-- nav for other -->
+
+            <div class="span3">
+              <div class="well sidebar-nav">
+                <h3>Sidebar</h3>
+                <ul class="nav nav-list">
+                  <li class="nav-header">Sidebar</li>
+                  <li><%= link_to "Magasin", magasins_index_path %></li>
+                </ul>
+              </div><!--/.well -->
+            </div><!--/span-->
+
+          <% end %>
+
+        </div><!--/row-->
+
+      <footer>
+        <p>&copy; C-N</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

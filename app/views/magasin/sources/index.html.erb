@@ -1,0 +1,29 @@
+
+
+<a><%= link_to "New Source of produit", new_magasin_magasin_source_path(@vendeur) %></a>
+<h1>Sources of produit in magasin <%= @vendeur.magasin.try(:nom_magasin) %></h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th >Nom du source</th>
+      <th >Nombre de produits</th>
+      <th >Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sources.each do |s| %>
+      <tr>
+        <td><%= s.pays %></td>
+        <td><%= s.produit.count %></td>
+        <td>
+        	<li class = "icon-edit">
+        		<%= link_to " Edit", edit_magasin_magasin_source_path(s.magasin_id,s)%>
+        	</li> &nbsp; &nbsp; &nbsp;
+        	<li class = "icon-trash">
+        		<%= link_to " Delete", magasin_magasin_source_path(s.magasin_id,s), :method => 'delete'%>
+        	</li>
+    	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

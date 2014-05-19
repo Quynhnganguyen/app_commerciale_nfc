@@ -1,0 +1,21 @@
+
+<h1>Magasins</h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th >Nom du magasin</th>
+      <th >Adresse du magasin</th>
+  
+    </tr>
+  </thead>
+  <tbody>
+    <% @magasins.each do |e| %>
+      <tr>
+        <td><%= link_to e.nom_magasin, produits_index_path(magasin_id: e.id)%></td>
+        
+        <td><%= e.adresse_magasin %></td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>
