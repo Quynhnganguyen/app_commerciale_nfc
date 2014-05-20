@@ -11,7 +11,7 @@
     </ListView>
 
     <TextView
-        android:id="@+id/nom"
+        android:id="@+id/text1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:padding="10dip" 
@@ -19,7 +19,7 @@
     </TextView>
 
     <TextView
-        android:id="@+id/adresse"
+        android:id="@+id/text2"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:padding="10dip" >

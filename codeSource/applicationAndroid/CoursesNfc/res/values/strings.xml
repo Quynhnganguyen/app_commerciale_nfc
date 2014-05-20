@@ -35,7 +35,7 @@
     <string name="produit2">Produit 2</string>
     <string name="propositionDeScannerProduit">Scannez le premier produit</string>
     <string name="propositionDeScannerProduit2">Scannez le deuxième produit</string>
-    <string name="meilleurProduit">Le meilleur produit est %s</string>
+    <string name="meilleurProduit">  </string>
     <string name="boutonComparaison">Comparer</string>
     <string name="boutonAcheterMeilleurProduit">Acheter le meilleur produit</string>
     <string name="title_activity_test_nfc">TestNfcActivity</string>

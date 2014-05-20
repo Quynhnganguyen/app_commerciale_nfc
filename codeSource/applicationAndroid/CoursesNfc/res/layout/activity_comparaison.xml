@@ -49,21 +49,13 @@
         android:drawableBottom="#B9121B"
         android:text="@string/propositionDeScannerProduit" />
 
-    <TextView
-        android:id="@+id/meilleurProduit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/propositionDeScannerProduit"
-        android:layout_centerHorizontal="true"
-        android:text="@string/meilleurProduit"
-        android:visibility="gone" />
-
     <Button
         android:id="@+id/boutonComparaison"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
+        android:enabled="false"
         android:text="@string/boutonComparaison" />
 
     <Button
@@ -73,6 +65,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/boutonComparaison"
+        android:enabled="false"
         android:text="@string/boutonAcheterMeilleurProduit" />
 
 </RelativeLayout>
