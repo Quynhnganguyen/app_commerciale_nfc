@@ -112,14 +112,14 @@ public class ComparaisonActivity extends MenuActivity {
 						if (Float.parseFloat(prixProduit1) < Float
 								.parseFloat(prixProduit2)) {
 							propositionDeScannerProduit
-									.setText("Meilleur produit -> produit 1:"
+									.setText("Meilleur produit -> produit 1: "
 											+ prixProduit1 + " €");
 							boutonAcheterMeilleurProduit.setEnabled(true);
 							bestProduit = idProduit1;
 
 						} else {
 							propositionDeScannerProduit
-									.setText("Meilleur produit -> produit2"
+									.setText("Meilleur produit -> produit2: "
 											+ prixProduit2 + " €");
 							boutonAcheterMeilleurProduit.setEnabled(true);
 							bestProduit = idProduit2;
@@ -231,7 +231,7 @@ public class ComparaisonActivity extends MenuActivity {
 					httpPost = new HttpPost(url + "scan_nfc?nfc_id="
 							+ id_string);
 				} else {
-					Log.e(TAG,intentRecu.getStringExtra(ID_CLIENT));
+					
 					httpPost = new HttpPost(url
 							+ "add_liste_acheter?client_id="
 							+ intentRecu.getStringExtra(ID_CLIENT)
@@ -276,7 +276,7 @@ public class ComparaisonActivity extends MenuActivity {
 						}
 						response = "ok";
 					}else{
-						Log.e(TAG,"rknonknp");
+						
 						JSONObject jSonObject = new JSONObject(
 								stringBuilder.toString());
 

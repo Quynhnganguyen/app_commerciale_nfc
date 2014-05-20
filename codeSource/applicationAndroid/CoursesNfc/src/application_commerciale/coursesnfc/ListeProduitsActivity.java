@@ -10,11 +10,12 @@ import java.util.List;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,58 +23,51 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-public class MagasinActivity extends MenuActivity {
-	/* Attributs pour l'interface graphique */
-	private ListView listeViewMagasins;
-	private String[][] lesMagasins;
-	private List<HashMap<String, String>> listeMagasins;
-	private ListAdapter adapter;
+public class ListeProduitsActivity extends MenuActivity {
+	ListView listeViewProduitsMagasin;
+	private List<HashMap<String, String>> produitsMagasin;
+	ListAdapter adapter;
+	private String[][] lesproduitsMagasin;
 
 	/* Attributs pour Intent */
-	Intent intentEnvoye;
+	Intent intentRecu;
 	private final String ID_MAGASIN = "id_magasin";
 
 	/* Attributs pour la connexion avec le WebService */
-	public static final String TAG = "TAG_MAGASINS";
+	public static final String TAG = "TAG_PRODUITSMAGASIN";
 	private String url = "http://quiet-wildwood-3463.herokuapp.com/api/clients/";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_magasin);
+		intentRecu = getIntent();
+		Log.e("df",intentRecu.getStringExtra(ID_MAGASIN));
+		setContentView(R.layout.activity_liste_produits_magasin);
+		listeViewProduitsMagasin = (ListView) findViewById(R.id.listeProduitsMagasin);
+		listeViewProduitsMagasin.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-		listeViewMagasins = (ListView) findViewById(R.id.listeMagasins);
-		listeViewMagasins.setChoiceMode(ListView.CHOICE_MODE_NONE);
-		listeMagasins = new ArrayList<HashMap<String, String>>();
-		afficheListeMagasins();
-		listeViewMagasins.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-			
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				intentEnvoye = new Intent(MagasinActivity.this,ListeProduitsActivity.class);
-				intentEnvoye.putExtra(ID_MAGASIN,lesMagasins[position][2]);
-				startActivity(intentEnvoye);
-			}
-		});
+		produitsMagasin = new ArrayList<HashMap<String, String>>();
+		
+		afficheProduitsMagasin();
 	}
 
-	private class MagasinTask extends AsyncTask<String, Void, String> {
+	private class ProduitsMagasinTask extends AsyncTask<String, Void, String> {
 		private String response = "";
 
 		@Override
 		protected String doInBackground(String... urls) {
-			response = recupererLesMagasins();
+			response = recupererProduitsMagasin();
 			return response;
 		}
 
-		public String recupererLesMagasins() {
+		public String recupererProduitsMagasin() {
 			response = "Ca ne marche pas...";
 			HttpClient httpclient = new DefaultHttpClient();
 			try {
-				HttpGet httpGet = new HttpGet(url + "liste_magasins");
-				HttpResponse httpresponse = httpclient.execute(httpGet);
+				HttpPost httpPost = new HttpPost(url
+						+ "produits_magasin?magasin_id="
+						+ intentRecu.getStringExtra(ID_MAGASIN));
+				HttpResponse httpresponse = httpclient.execute(httpPost);
 				HttpEntity httpentity = httpresponse.getEntity();
 				if (httpentity != null) {
 					InputStream inputstream = httpentity.getContent();
@@ -89,15 +83,14 @@ public class MagasinActivity extends MenuActivity {
 
 					JSONArray jSonArray = new JSONArray(
 							stringBuilder.toString());
-					lesMagasins = new String[jSonArray.length()][2];
+					lesproduitsMagasin = new String[jSonArray.length()][2];
 					for (int i = 0; i < jSonArray.length(); i++) {
 						JSONObject jSonObject = jSonArray.optJSONObject(i);
-						String nom = jSonObject.getString("magasin_nom");
-						String adresse = jSonObject
-								.getString("magasin_adresse");
+						String nom = jSonObject.getString("produit_nom");
+						String prix = jSonObject.getString("prix");
 
-						lesMagasins[i][0] = nom;
-						lesMagasins[i][1] = adresse;
+						lesproduitsMagasin[i][0] = nom;
+						lesproduitsMagasin[i][1] = prix;
 					}
 
 					response = "Données récupérées";
@@ -111,23 +104,25 @@ public class MagasinActivity extends MenuActivity {
 		@Override
 		protected void onPostExecute(String result) {
 			if (result.equals("Données récupérées")) {
-				HashMap<String, String> unMagasin;
 
-				for (int i = 0; i < lesMagasins.length; i++) {
+				HashMap<String, String> unProduitMagasin;
 
-					unMagasin = new HashMap<String, String>();
+				for (int i = 0; i < lesproduitsMagasin.length; i++) {
 
-					unMagasin.put("text1", lesMagasins[i][0]);
+					unProduitMagasin = new HashMap<String, String>();
 
-					unMagasin.put("text2", lesMagasins[i][1]);
-					listeMagasins.add(unMagasin);
+					unProduitMagasin.put("text1", lesproduitsMagasin[i][0]);
+
+					unProduitMagasin.put("text2", lesproduitsMagasin[i][1]);
+					produitsMagasin.add(unProduitMagasin);
 				}
 
-				adapter = new SimpleAdapter(getApplicationContext(),
-						listeMagasins, android.R.layout.simple_list_item_2,
-						new String[] { "text1", "text2" }, new int[] {
-								android.R.id.text1, android.R.id.text2 });
-				listeViewMagasins.setAdapter(adapter);
+				adapter = new SimpleAdapter(getApplicationContext(), produitsMagasin,
+						android.R.layout.simple_list_item_2, new String[] { "text1",
+								"text2" }, new int[] { android.R.id.text1,
+								android.R.id.text2 });
+				listeViewProduitsMagasin.setAdapter(adapter);
+
 
 			} else {
 				Log.e(TAG, "Ca ne marche pas");
@@ -135,7 +130,9 @@ public class MagasinActivity extends MenuActivity {
 		}
 	}
 
-	public void afficheListeMagasins() {
-		new MagasinTask().execute(url + "liste_magasins");
+	public void afficheProduitsMagasin() {
+		new ProduitsMagasinTask().execute(url + "produits_magasin?magasin_id="
+				+ intentRecu.getStringExtra(ID_MAGASIN));
 	}
+
 }

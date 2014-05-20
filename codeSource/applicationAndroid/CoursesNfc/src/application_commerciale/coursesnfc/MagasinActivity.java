@@ -15,9 +15,12 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -28,6 +31,10 @@ public class MagasinActivity extends MenuActivity {
 	private String[][] lesMagasins;
 	private List<HashMap<String, String>> listeMagasins;
 	private ListAdapter adapter;
+
+	/* Attributs pour Intent */
+	Intent intentEnvoye;
+	private final String ID_MAGASIN = "id_magasin";
 
 	/* Attributs pour la connexion avec le WebService */
 	public static final String TAG = "TAG_MAGASINS";
@@ -42,6 +49,17 @@ public class MagasinActivity extends MenuActivity {
 		listeViewMagasins.setChoiceMode(ListView.CHOICE_MODE_NONE);
 		listeMagasins = new ArrayList<HashMap<String, String>>();
 		afficheListeMagasins();
+		listeViewMagasins.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				intentEnvoye = new Intent(MagasinActivity.this,ListeProduitsActivity.class);
+				intentEnvoye.putExtra(ID_MAGASIN,lesMagasins[position][2]);
+				Log.e("ddfnd",""+position);
+				startActivity(intentEnvoye);	
+			}
+		});
 	}
 
 	private class MagasinTask extends AsyncTask<String, Void, String> {
@@ -74,15 +92,17 @@ public class MagasinActivity extends MenuActivity {
 
 					JSONArray jSonArray = new JSONArray(
 							stringBuilder.toString());
-					lesMagasins = new String[jSonArray.length()][2];
+					lesMagasins = new String[jSonArray.length()][3];
 					for (int i = 0; i < jSonArray.length(); i++) {
 						JSONObject jSonObject = jSonArray.optJSONObject(i);
 						String nom = jSonObject.getString("magasin_nom");
 						String adresse = jSonObject
 								.getString("magasin_adresse");
-
+						String id = jSonObject
+								.getString("magasin_id");
 						lesMagasins[i][0] = nom;
 						lesMagasins[i][1] = adresse;
+						lesMagasins[i][2] = id;
 					}
 
 					response = "Données récupérées";
