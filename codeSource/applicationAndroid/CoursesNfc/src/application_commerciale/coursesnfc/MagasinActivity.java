@@ -23,12 +23,15 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 public class MagasinActivity extends MenuActivity {
+	/* Attributs pour l'interface graphique */
 	private ListView listeViewMagasins;
 	private String[][] lesMagasins;
 	private List<HashMap<String, String>> listeMagasins;
 	private ListAdapter adapter;
+
+	/* Attributs pour la connexion avec le WebService */
 	public static final String TAG = "TAG_MAGASINS";
-	private String url ="http://quiet-wildwood-3463.herokuapp.com/api/clients/";
+	private String url = "http://quiet-wildwood-3463.herokuapp.com/api/clients/";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +42,6 @@ public class MagasinActivity extends MenuActivity {
 		listeViewMagasins.setChoiceMode(ListView.CHOICE_MODE_NONE);
 		listeMagasins = new ArrayList<HashMap<String, String>>();
 		afficheListeMagasins();
-	}
-
-	public void afficheListeMagasins() {
-		new MagasinTask()
-				.execute(url+"liste_magasins");
 	}
 
 	private class MagasinTask extends AsyncTask<String, Void, String> {
@@ -59,7 +57,7 @@ public class MagasinActivity extends MenuActivity {
 			response = "Ca ne marche pas...";
 			HttpClient httpclient = new DefaultHttpClient();
 			try {
-				HttpGet httpGet = new HttpGet(url+"liste_magasins");
+				HttpGet httpGet = new HttpGet(url + "liste_magasins");
 				HttpResponse httpresponse = httpclient.execute(httpGet);
 				HttpEntity httpentity = httpresponse.getEntity();
 				if (httpentity != null) {
@@ -73,20 +71,21 @@ public class MagasinActivity extends MenuActivity {
 						ligne = bufferedreader.readLine();
 					}
 					bufferedreader.close();
-					
-					JSONArray jSonArray = new JSONArray(stringBuilder.toString());
+
+					JSONArray jSonArray = new JSONArray(
+							stringBuilder.toString());
 					lesMagasins = new String[jSonArray.length()][2];
 					for (int i = 0; i < jSonArray.length(); i++) {
 						JSONObject jSonObject = jSonArray.optJSONObject(i);
 						String nom = jSonObject.getString("magasin_nom");
 						String adresse = jSonObject
 								.getString("magasin_adresse");
-					
-						lesMagasins[i][0]= nom;
-						lesMagasins[i][1]= adresse;
+
+						lesMagasins[i][0] = nom;
+						lesMagasins[i][1] = adresse;
 					}
 
-					response = "ok";
+					response = "Données récupérées";
 				}
 			} catch (Exception e) {
 				Log.e(TAG, e.getMessage());
@@ -96,7 +95,7 @@ public class MagasinActivity extends MenuActivity {
 
 		@Override
 		protected void onPostExecute(String result) {
-			if (result.equals("ok")) {
+			if (result.equals("Données récupérées")) {
 				HashMap<String, String> unMagasin;
 
 				for (int i = 0; i < lesMagasins.length; i++) {
@@ -108,18 +107,20 @@ public class MagasinActivity extends MenuActivity {
 					unMagasin.put("text2", lesMagasins[i][1]);
 					listeMagasins.add(unMagasin);
 				}
-				
+
 				adapter = new SimpleAdapter(getApplicationContext(),
 						listeMagasins, android.R.layout.simple_list_item_2,
 						new String[] { "text1", "text2" }, new int[] {
 								android.R.id.text1, android.R.id.text2 });
 				listeViewMagasins.setAdapter(adapter);
 
-			
 			} else {
 				Log.e(TAG, "Ca ne marche pas");
 			}
 		}
 	}
 
+	public void afficheListeMagasins() {
+		new MagasinTask().execute(url + "liste_magasins");
+	}
 }

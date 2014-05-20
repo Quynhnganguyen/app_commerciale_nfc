@@ -80,7 +80,7 @@ public class ConnexionActivity extends Activity {
 	}
 
 	/* La connexion au webservice */
-	private class ConnexionActivityTask extends AsyncTask<String, Void, String> {
+	private class ConnexionTask extends AsyncTask<String, Void, String> {
 		private String response = "";
 
 		@Override
@@ -152,7 +152,7 @@ public class ConnexionActivity extends Activity {
 
 	/* Appel au WebService */
 	public void verifierExistenceClient() {
-		new ConnexionActivityTask().execute(url + "sign_in?email="
+		new ConnexionTask().execute(url + "sign_in?email="
 				+ nomUtilisateur.getText() + "&password="
 				+ motDePasse.getText());
 	}

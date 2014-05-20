@@ -10,14 +10,14 @@
 
     <TextView
         android:id="@+id/scannerProduit"
+        style="@style/texteImportant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="70dp"
         android:layout_marginTop="10dp"
-        android:text="@string/scannerProduit"
-        style="@style/texteImportant"/>
+        android:text="@string/scannerProduit" />
 
     <TextView
         android:id="@+id/intituleNomProduit"
@@ -26,6 +26,7 @@
         android:layout_below="@id/scannerProduit"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
         android:text="@string/intituleNomProduit"
         android:textColor="#FFFFFF" />
 
@@ -47,6 +48,7 @@
         android:layout_below="@id/intituleNomProduit"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
         android:text="@string/intitulePrixProduit"
         android:textColor="#FFFFFF" />
 
@@ -69,6 +71,7 @@
         android:layout_below="@id/intitulePrixProduit"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
         android:text="@string/intituleTypeProduit"
         android:textColor="#FFFFFF" />
 
@@ -91,6 +94,7 @@
         android:layout_below="@id/intituleTypeProduit"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
         android:text="@string/intituleMagasin"
         android:textColor="#FFFFFF" />
 
@@ -112,6 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/intituleNomProduit"
         android:layout_below="@+id/intituleMagasin"
+        android:layout_marginRight="5dp"
         android:text="@string/intituleSourceProduit"
         android:textColor="#FFFFFF" />
 
@@ -132,6 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/intituleSourceProduit"
         android:layout_marginBottom="5dp"
+         android:layout_marginTop="20dp"
         android:text="@string/checkFavoris"
         android:textColor="#8FCF3C" />
 

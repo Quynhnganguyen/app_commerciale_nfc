@@ -20,7 +20,7 @@ public class AccueilActivity extends Activity {
 	Button boutonComparerDeuxProduits;
 	/*Attribut pour les intents*/
 	Intent intentRecu;
-	final String ID_CLIENT = "id_client";
+	private final String ID_CLIENT = "id_client";
 	Intent intentEnvoye;
 	
 	@Override

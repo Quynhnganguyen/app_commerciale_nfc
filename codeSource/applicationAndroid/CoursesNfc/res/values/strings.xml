@@ -40,8 +40,8 @@
     <string name="boutonAcheterMeilleurProduit">Acheter le meilleur produit</string>
     <string name="title_activity_test_nfc">TestNfcActivity</string>
     <string name="title_activity_information_produit">Informations Produit</string>
-    <string name="checkFavoris"> Liste favoris</string>
-    <string name="checkListeNoire"> Liste Noire</string>
+    <string name="checkFavoris"> Ajouter dans liste favoris</string>
+    <string name="checkListeNoire"> Ajouter dans liste Noire</string>
     <string name="intituleNomProduit">Nom :</string>
     <string name="intitulePrixProduit">Prix:</string>
     <string name="intituleTypeProduit">Type:</string>
