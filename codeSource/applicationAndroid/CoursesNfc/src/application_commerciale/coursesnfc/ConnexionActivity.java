@@ -24,18 +24,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class ConnexionActivity extends Activity {
 	/* Attributs pour l'interface graphique */
 	EditText nomUtilisateur;
 	EditText motDePasse;
 	Button boutonConnexion;
 	TextView inscription;
 	Intent intent;
+	
+	/*Attributs pour le intent*/
+	private final String ID_CLIENT="id_client";
 
 	/* Attributs pour communication avec WebService */
 	@SuppressWarnings("unused")
 	private String nomRecupere;
-	@SuppressWarnings("unused")
 	private String idRecupere;
 	private String messageRecupere;
 	public static final String TAG = "TAG_INFO_PRODUIT";
@@ -44,7 +46,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_connexion);
 
 		nomUtilisateur = (EditText) findViewById(R.id.nomUtilisateur);
 		motDePasse = (EditText) findViewById(R.id.motDePasse);
@@ -69,7 +71,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				inscription.setTextColor(Color.WHITE);
-				intent = new Intent(MainActivity.this,
+				intent = new Intent(ConnexionActivity.this,
 						InscriptionActivity.class);
 				startActivity(intent);
 			}
@@ -78,7 +80,7 @@ public class MainActivity extends Activity {
 	}
 
 	/* La connexion au webservice */
-	private class MainActivityTask extends AsyncTask<String, Void, String> {
+	private class ConnexionActivityTask extends AsyncTask<String, Void, String> {
 		private String response = "";
 
 		@Override
@@ -88,6 +90,7 @@ public class MainActivity extends Activity {
 		}
 
 		public String recupererLesMagasins() {
+			/*Connexion au WebService*/
 			response = "Problème de connexion avec le WebService";
 			HttpClient httpclient = new DefaultHttpClient();
 			try {
@@ -108,13 +111,14 @@ public class MainActivity extends Activity {
 					}
 					bufferedreader.close();
 
+					/*Parsage des informations récupérées*/
 					JSONObject jSonObject = new JSONObject(
 							stringBuilder.toString());
 
 					messageRecupere = jSonObject.getString("message");
 					if (messageRecupere.equals("Login success")) {
 						nomRecupere = jSonObject.getString("clientname");
-						idRecupere = jSonObject.getString("client_id");
+						idRecupere= jSonObject.getString("client_id");
 					}
 
 					response = "Connexion ok";
@@ -129,17 +133,18 @@ public class MainActivity extends Activity {
 		protected void onPostExecute(String result) {
 			if (messageRecupere.equals("Invalid client")) {
 				Toast.makeText(
-						MainActivity.this,
+						ConnexionActivity.this,
 						"Nom utilisateur incorrect! Rééssayez s'il vous plaît!",
 						Toast.LENGTH_LONG).show();
 			} else if (messageRecupere.equals("Invalid password")) {
-				Toast.makeText(MainActivity.this,
+				Toast.makeText(ConnexionActivity.this,
 						"Mot de passe erroné! Rééssayez s'il vous plaît!",
 						Toast.LENGTH_LONG).show();
 			} else if (messageRecupere.equals("Login success")) {
-				Toast.makeText(MainActivity.this, "Connexion ",
+				Toast.makeText(ConnexionActivity.this, "Connexion ",
 						Toast.LENGTH_LONG).show();
-				intent = new Intent(MainActivity.this, AccueilActivity.class);
+				intent = new Intent(ConnexionActivity.this, AccueilActivity.class);
+				intent.putExtra(ID_CLIENT,idRecupere);
 				startActivity(intent);
 			}
 		}
@@ -147,7 +152,7 @@ public class MainActivity extends Activity {
 
 	/* Appel au WebService */
 	public void verifierExistenceClient() {
-		new MainActivityTask().execute(url + "sign_in?email="
+		new ConnexionActivityTask().execute(url + "sign_in?email="
 				+ nomUtilisateur.getText() + "&password="
 				+ motDePasse.getText());
 	}

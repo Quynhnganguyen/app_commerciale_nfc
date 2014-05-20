@@ -27,7 +27,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="application_commerciale.coursesnfc.MainActivity"
+            android:name="application_commerciale.coursesnfc.ConnexionActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,86 +1,122 @@
 package application_commerciale.coursesnfc;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
+import android.content.Intent;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.Spinner;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
 
-public class AccueilActivity extends MenuActivity {
-	private String[] magasins = { "Magasin1", "Magasin2", "Magasin3" };
-	Spinner listeMagasins;
-	ListView listeProduits;
-	private List<HashMap<String, String>> produits;
-	ListAdapter adapter; 
+public class AccueilActivity extends Activity {
+	/*Attributs pour l'interface graphique*/
+	TextView texteDeBienvenue;
+	Button boutonListeMagasins;
+	Button boutonProduitsAAcheter;
+	Button boutonProduitsFavoris;
+	Button boutonListeNoire;
+	Button boutonScannerProduit;
+	Button boutonComparerDeuxProduits;
+	/*Attribut pour les intents*/
+	Intent intentRecu;
+	final String ID_CLIENT = "id_client";
+	Intent intentEnvoye;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_accueil);
+		intentRecu = getIntent();
+		texteDeBienvenue = (TextView) findViewById(R.id.texteDeBienvenue);
 		
-		  listeMagasins = (Spinner) findViewById(R.id.listeDeroulanteMagasins);
-		  ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(this,
-		    android.R.layout.simple_spinner_item, magasins);
-		  adapter_state
-		    .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		  listeMagasins.setAdapter(adapter_state);
-		  listeMagasins.setOnItemSelectedListener(new OnItemSelectedListener(){
+		boutonListeMagasins = (Button) findViewById(R.id.boutonListeMagasins);
+		boutonListeMagasins.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onItemSelected(AdapterView<?> parent, View view,
-					int position, long id) {
+			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+				if (v.getId() == R.id.boutonListeMagasins) {
+					intentEnvoye = new Intent(AccueilActivity.this,MagasinActivity.class);
+					intentEnvoye.putExtra(ID_CLIENT,intentRecu.getStringExtra(ID_CLIENT));
+					startActivity(intentEnvoye);
+
+				}
 			}
+
+		});
+		boutonProduitsAAcheter= (Button) findViewById(R.id.boutonProduitsAAcheter);
+		boutonProduitsAAcheter.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
+			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
-			}
-			  
-		  });
-		  
-		  listeProduits = (ListView) findViewById(R.id.listeProduits);
-		  listeProduits.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-			String[][] lesProduits = new String[][] {
-					{ "Produit 1", "2€" },
-					{ "Produit 2", "3€" },
-					{ "Produit 3", "5€" } };
-
-			produits = new ArrayList<HashMap<String, String>>();
-
-			HashMap<String, String> unProduit;
-
-			for (int i = 0; i < lesProduits.length; i++) {
-
-				unProduit = new HashMap<String, String>();
-
-				unProduit.put("text1", lesProduits[i][0]);
-
-				unProduit.put("text2", lesProduits[i][1]);
-				produits.add(unProduit);
+				if (v.getId() == R.id.boutonProduitsAAcheter) {
+					intentEnvoye = new Intent(AccueilActivity.this,AccueilActivity.class);
+					intentEnvoye.putExtra(ID_CLIENT,intentRecu.getStringExtra(ID_CLIENT));
+					startActivity(intentEnvoye);
+				}
 			}
 
-			 adapter = new SimpleAdapter(this, produits,
-					android.R.layout.simple_list_item_multiple_choice, new String[] { "text1",
-							"text2" }, new int[] { android.R.id.text1,
-							android.R.id.text2 });
-			listeProduits.setAdapter(adapter);
+		});
+		boutonProduitsFavoris = (Button) findViewById(R.id.boutonProduitsFavoris);
+		boutonProduitsFavoris.setOnClickListener(new OnClickListener() {
 
-		
-			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if (v.getId() == R.id.boutonProduitsFavoris) {
+					intentEnvoye = new Intent(AccueilActivity.this,FavorisActivity.class);
+					intentEnvoye.putExtra(ID_CLIENT,intentRecu.getStringExtra(ID_CLIENT));
+					startActivity(intentEnvoye);			
+
+				}
+			}
+
+		});
+		boutonListeNoire = (Button) findViewById(R.id.boutonListeNoire);
+		boutonListeNoire.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if (v.getId() == R.id.boutonListeNoire) {
+					intentEnvoye = new Intent(AccueilActivity.this,ListeNoireActivity.class);
+					intentEnvoye.putExtra(ID_CLIENT,intentRecu.getStringExtra(ID_CLIENT));
+					startActivity(intentEnvoye);
+				}
+			}
+
+		});
+		boutonScannerProduit = (Button) findViewById(R.id.boutonScannerProduit);
+		boutonScannerProduit.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if (v.getId() == R.id.boutonScannerProduit) {
+					intentEnvoye = new Intent(AccueilActivity.this,InformationProduitActivity.class);
+					intentEnvoye.putExtra(ID_CLIENT,intentRecu.getStringExtra(ID_CLIENT));
+					startActivity(intentEnvoye);
+				}
+			}
+
+		});
+		boutonComparerDeuxProduits= (Button) findViewById(R.id.boutonComparerDeuxProduits);
+		boutonComparerDeuxProduits.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if (v.getId() == R.id.boutonComparerDeuxProduits) {
+					intentEnvoye = new Intent(AccueilActivity.this,ComparaisonActivity.class);
+					intentEnvoye.putExtra(ID_CLIENT,intentRecu.getStringExtra(ID_CLIENT));
+					startActivity(intentEnvoye);
+				}
+			}
+
+		});
 	}
 
-
-
 	
-
 }
