@@ -1113,14 +1113,13 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
-        public static final int franchise=0x7f050051;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f05002a;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
         public static final int inscription=0x7f050061;
-        public static final int intituleFranchise=0x7f050050;
+        public static final int intituleMagasin=0x7f050050;
         public static final int intituleNomProduit=0x7f05004a;
         public static final int intitulePrixProduit=0x7f05004c;
         public static final int intituleSourceProduit=0x7f050052;
@@ -1140,6 +1139,7 @@ containing a value of this type.
         public static final int listeNoire=0x7f05005c;
         public static final int listeProduits=0x7f05003d;
         public static final int login=0x7f050059;
+        public static final int magasinProduit=0x7f050051;
         public static final int mdp=0x7f05005a;
         public static final int meilleurProduit=0x7f050045;
         public static final int middle=0x7f050012;
@@ -1316,12 +1316,13 @@ containing a value of this type.
         public static final int checkFavoris=0x7f0a0034;
         public static final int checkListeNoire=0x7f0a0035;
         public static final int inscription=0x7f0a0023;
-        public static final int intituleFranchise=0x7f0a0039;
+        public static final int intituleMagasin=0x7f0a0039;
         public static final int intituleNomProduit=0x7f0a0036;
         public static final int intitulePrixProduit=0x7f0a0037;
         public static final int intituleSourceProduit=0x7f0a003a;
         public static final int intituleTypeProduit=0x7f0a0038;
         public static final int login=0x7f0a0027;
+        public static final int magasinProduit=0x7f0a003f;
         public static final int mdp=0x7f0a0028;
         public static final int meilleurProduit=0x7f0a002f;
         public static final int menuAccueil=0x7f0a0019;
@@ -1333,12 +1334,15 @@ containing a value of this type.
         public static final int menuScannerUnProduit=0x7f0a001e;
         public static final int motDePasse=0x7f0a0021;
         public static final int nom=0x7f0a0024;
+        public static final int nomProduit=0x7f0a003c;
         public static final int prenom=0x7f0a0025;
+        public static final int prixProduit=0x7f0a003d;
         public static final int produit1=0x7f0a002b;
         public static final int produit2=0x7f0a002c;
         public static final int propositionDeScannerProduit=0x7f0a002d;
         public static final int propositionDeScannerProduit2=0x7f0a002e;
         public static final int scannerProduit=0x7f0a003b;
+        public static final int sourceProduit=0x7f0a0040;
         public static final int texteComparaison=0x7f0a002a;
         public static final int title_activity_accueil=0x7f0a000f;
         public static final int title_activity_comparaison=0x7f0a0018;
@@ -1352,6 +1356,7 @@ containing a value of this type.
         public static final int title_section1=0x7f0a0010;
         public static final int title_section2=0x7f0a0011;
         public static final int title_section3=0x7f0a0012;
+        public static final int typeProduit=0x7f0a003e;
         public static final int utilisateur=0x7f0a0020;
     }
     public static final class style {

@@ -3,9 +3,6 @@ package application_commerciale.coursesnfc.bdd;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -13,58 +10,76 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import application_commerciale.coursesnfc.MagasinActivity;
 
 public class WebServiceTask extends AsyncTask<String, Void, String> {
 	private String reponseDuWS;
-	private String url;
+	private String url = "http://quiet-wildwood-3463.herokuapp.com/api/clients/";
 	private static String TAG;
-	private JSONArray jSonArray;
+	private JSONArray lesDonnees;
+	private Context context;
 
 	@Override
 	protected String doInBackground(String... urls) {
-		reponseDuWS = communiquerAvecWS();
+		communiquerAvecWS();
 		return reponseDuWS;
 	}
 
-	public String communiquerAvecWS() {
-			reponseDuWS = "Erreur lors de la récupération des données";
-			HttpClient httpclient = new DefaultHttpClient();
-			try {
-				HttpGet httpGet = new HttpGet(url);
-				HttpResponse httpResponse = httpclient.execute(httpGet);
-				HttpEntity httpEntity = httpResponse.getEntity();
-				if (httpEntity != null) {
-					InputStream inputstream = httpEntity.getContent();
-					BufferedReader bufferedreader = new BufferedReader(
-							new InputStreamReader(inputstream));		
-					String ligne = bufferedreader.readLine();
-					while (ligne != null) {
-						ligne = bufferedreader.readLine();
-					}
-					bufferedreader.close();
-								
-					jSonArray = new JSONArray();
-					List<String> lesDonnees = new ArrayList<String>();
-					for (int i =0;i<jSonArray.length();i++){
-						JSONObject actor = jSonArray.optJSONObject(i);
-						String name = actor.getString("result");
-						lesDonnees.add(name);
-					}
-					
-					reponseDuWS = "Donnees récupérées" ;
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String suiteUrl) {
+		url += suiteUrl;
+
+	}
+
+	public JSONArray getLesDonnees() {
+		return lesDonnees;
+	}
+
+	public void communiquerAvecWS() {
+
+		reponseDuWS = "Erreur lors de la récupération des données";
+		HttpClient httpclient = new DefaultHttpClient();
+		try {
+			HttpGet httpGet = new HttpGet(url);
+			HttpResponse httpresponse = httpclient.execute(httpGet);
+			HttpEntity httpentity = httpresponse.getEntity();
+			if (httpentity != null) {
+				InputStream inputstream = httpentity.getContent();
+				BufferedReader bufferedreader = new BufferedReader(
+						new InputStreamReader(inputstream));
+				StringBuilder stringBuilder = new StringBuilder();
+				String ligne = bufferedreader.readLine();
+				while (ligne != null) {
+					stringBuilder.append(ligne + "n");
+					ligne = bufferedreader.readLine();
 				}
-			} catch (Exception e) {
-				Log.e(TAG, e.getMessage());
+				bufferedreader.close();
+
+				lesDonnees = new JSONArray(stringBuilder.toString());
+				/*
+				 * List<String> list = new ArrayList<String>(); for (int i = 0;
+				 * i < lesDonnees.length(); i++) { JSONObject actor =
+				 * lesDonnees.optJSONObject(i); String name =
+				 * actor.getString("result"); list.add(name); }
+				 */
+
+				reponseDuWS = "Donnees récupérées";
 			}
-			return reponseDuWS;
+		} catch (Exception e) {
+			Log.e(TAG, e.getMessage());
 		}
+
+	}
 
 	@Override
 	protected void onPostExecute(String result) {
-
+	
 	}
 }

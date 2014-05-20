@@ -35,10 +35,12 @@
         android:id="@+id/nomProduit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@id/intituleNomProduit"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
         android:layout_toRightOf="@id/intituleNomProduit"
-        android:background="#FFFFFF" />
+        android:background="#FFFFFF"
+        android:text="@string/nomProduit" />
 
     <TextView
         android:id="@+id/intitulePrixProduit"
@@ -54,9 +56,13 @@
         android:id="@+id/prixProduit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@id/intitulePrixProduit"
         android:layout_below="@id/nomProduit"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/intitulePrixProduit"
+        android:background="#FFFFFF"
+        android:text="@string/prixProduit" />
 
     <TextView
         android:id="@+id/intituleTypeProduit"
@@ -72,34 +78,42 @@
         android:id="@+id/typeProduit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@id/intituleTypeProduit"
         android:layout_below="@id/prixProduit"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/intituleTypeProduit"
+        android:background="#FFFFFF"
+        android:text="@string/typeProduit" />
 
     <TextView
-        android:id="@+id/intituleFranchise"
+        android:id="@+id/intituleMagasin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/intituleTypeProduit"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
-        android:text="@string/intituleFranchise"
+        android:text="@string/intituleMagasin"
         android:textColor="#FFFFFF" />
 
     <TextView
-        android:id="@+id/franchise"
+        android:id="@+id/magasinProduit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@id/intituleMagasin"
         android:layout_below="@id/typeProduit"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/intituleMagasin"
+        android:background="#FFFFFF"
+        android:text="@string/magasinProduit" />
 
     <TextView
         android:id="@+id/intituleSourceProduit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/intituleNomProduit"
-        android:layout_below="@+id/intituleFranchise"
+        android:layout_below="@+id/intituleMagasin"
         android:text="@string/intituleSourceProduit"
         android:textColor="#FFFFFF" />
 
@@ -107,9 +121,12 @@
         android:id="@+id/sourceProduit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/franchise"
+        android:layout_alignTop="@id/intituleSourceProduit"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/intituleSourceProduit"
+        android:background="#FFFFFF"
+        android:text="@string/sourceProduit" />
 
     <CheckBox
         android:id="@+id/checkFavoris"

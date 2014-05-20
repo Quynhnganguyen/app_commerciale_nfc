@@ -45,7 +45,13 @@
 	<string name="intituleNomProduit">Nom :</string>
 	<string name="intitulePrixProduit">Prix:</string>
 	<string name="intituleTypeProduit">Type:</string>
-	<string name="intituleFranchise">Franchise:</string>
+	<string name="intituleMagasin">Magasin:</string>
 	<string name="intituleSourceProduit">Source:</string>
 	<string name="scannerProduit">"Scannez votre produit!"</string>
+	<string name="nomProduit">"       "</string>
+	<string name="prixProduit">"       "</string>
+	<string name="typeProduit">"       "</string>
+	<string name="magasinProduit">"       "</string>
+	<string name="sourceProduit">"       "</string>
+	
 	</resources>
