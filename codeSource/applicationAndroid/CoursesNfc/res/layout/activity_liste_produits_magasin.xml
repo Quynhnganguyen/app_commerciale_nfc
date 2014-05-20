@@ -1,11 +1,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="#002F2F" >
-
+    android:background="#002F2F"
+    android:orientation="vertical" >
+       
     <ListView
-        android:id="@+id/listeMagasins"
+        android:id="@+id/listeProduitsMagasin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
     </ListView>
@@ -14,15 +14,18 @@
         android:id="@+id/nom"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:padding="10dip" 
-       >
-    </TextView>
-
-    <TextView
-        android:id="@+id/adresse"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
         android:padding="10dip" >
     </TextView>
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/prix"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dip" >
+    </TextView>  
+
+        
+
+</RelativeLayout> 
+
+	

@@ -28,6 +28,10 @@ public class MagasinActivity extends MenuActivity {
 	private String[][] lesMagasins;
 	private List<HashMap<String, String>> listeMagasins;
 	private ListAdapter adapter;
+	
+	/* Attributs pour Intent */
+	Intent intentEnvoye;
+	private final String ID_MAGASIN = "id_magasin";
 
 	/* Attributs pour la connexion avec le WebService */
 	public static final String TAG = "TAG_MAGASINS";
@@ -42,6 +46,16 @@ public class MagasinActivity extends MenuActivity {
 		listeViewMagasins.setChoiceMode(ListView.CHOICE_MODE_NONE);
 		listeMagasins = new ArrayList<HashMap<String, String>>();
 		afficheListeMagasins();
+
+		listViewMagasins.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			public void onItemClick(AdapterView<?> adapterView, View view,
+					int position, long id) {
+				intentEnvoye = new Intent(MagasinActivity.this,ListeProduitsActivity.class);
+				intentEnvoye.putExtra(ID_MAGASIN,lesMagasins[position][2]);
+				startActivity(intentEnvoye);
+			}
+		});
 	}
 
 	private class MagasinTask extends AsyncTask<String, Void, String> {
@@ -74,15 +88,16 @@ public class MagasinActivity extends MenuActivity {
 
 					JSONArray jSonArray = new JSONArray(
 							stringBuilder.toString());
-					lesMagasins = new String[jSonArray.length()][2];
+					lesMagasins = new String[jSonArray.length()][3];
 					for (int i = 0; i < jSonArray.length(); i++) {
 						JSONObject jSonObject = jSonArray.optJSONObject(i);
 						String nom = jSonObject.getString("magasin_nom");
 						String adresse = jSonObject
 								.getString("magasin_adresse");
-
+						String id = jSonObject.getString("magasin_id");
 						lesMagasins[i][0] = nom;
 						lesMagasins[i][1] = adresse;
+						lesMagasins[i][2] = id;
 					}
 
 					response = "Données récupérées";
@@ -102,16 +117,16 @@ public class MagasinActivity extends MenuActivity {
 
 					unMagasin = new HashMap<String, String>();
 
-					unMagasin.put("text1", lesMagasins[i][0]);
+					unMagasin.put("nom", lesMagasins[i][0]);
 
-					unMagasin.put("text2", lesMagasins[i][1]);
+					unMagasin.put("adresse", lesMagasins[i][1]);
 					listeMagasins.add(unMagasin);
 				}
 
 				adapter = new SimpleAdapter(getApplicationContext(),
 						listeMagasins, android.R.layout.simple_list_item_2,
-						new String[] { "text1", "text2" }, new int[] {
-								android.R.id.text1, android.R.id.text2 });
+						new String[] { "nom", "adresse" }, new int[] {
+								android.R.id.nom, android.R.id.adresse });
 				listeViewMagasins.setAdapter(adapter);
 
 			} else {
