@@ -54,11 +54,13 @@
     <string name="magasinProduit">"       "</string>
     <string name="sourceProduit">"       "</string>
     <string name="hello_world">Hello world!</string>
-	<string name="boutonListeMagasins">Liste des magasins</string>
-	<string name="boutonProduitsAAcheter">Produits à acheter</string>
-	<string name="boutonProduitsFavoris">Produits favoris</string>
-	<string name="boutonListeNoire">Liste noire</string>
-	<string name="boutonScannerProduit">Scanner produit</string>
-	<string name="boutonComparerDeuxProduits">Comparer deux produits</string>
-	<string name="texteDeBienvenue">Bienvenue sur Achat Rapide NFC!</string>
+    <string name="boutonListeMagasins">Liste des magasins</string>
+    <string name="boutonProduitsAAcheter">Produits à acheter</string>
+    <string name="boutonProduitsFavoris">Produits favoris</string>
+    <string name="boutonListeNoire">Liste noire</string>
+    <string name="boutonScannerProduit">Scanner produit</string>
+    <string name="boutonComparerDeuxProduits">Comparer deux produits</string>
+    <string name="texteDeBienvenue">Bienvenue sur Achat Rapide NFC!</string>
+    <string name="title_activity_nfc">NFCActivity</string>
+
 </resources>

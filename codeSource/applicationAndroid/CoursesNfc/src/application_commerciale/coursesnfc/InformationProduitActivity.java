@@ -66,7 +66,7 @@ public class InformationProduitActivity extends MenuActivity {
 		typeProduit = (TextView) findViewById(R.id.typeProduit);
 
 		intituleMagasin = (TextView) findViewById(R.id.intituleMagasin);
-		magasinProduit= (TextView) findViewById(R.id.magasinProduit);
+		magasinProduit = (TextView) findViewById(R.id.magasinProduit);
 
 		sourceProduit = (TextView) findViewById(R.id.sourceProduit);
 
@@ -107,10 +107,7 @@ public class InformationProduitActivity extends MenuActivity {
 		if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
 			byte[] id = intent.getByteArrayExtra(NfcAdapter.EXTRA_ID);
 			id_string = ByteArrayToHexString(id);
-			// tagEstScanne = true;
-			Log.e(TAG, "appel ws");
-			afficheListeMagasins();
-			Log.e(TAG, "fin connexion");
+			afficheInformationsProduit();
 		}
 	}
 
@@ -143,18 +140,16 @@ public class InformationProduitActivity extends MenuActivity {
 
 		@Override
 		protected String doInBackground(String... urls) {
-			response = recupererLesMagasins();
+			response = recupererLesInformations();
 			return response;
 		}
 
-		public String recupererLesMagasins() {
+		public String recupererLesInformations() {
 			response = "Ca ne marche pas...";
 			HttpClient httpclient = new DefaultHttpClient();
 			try {
-				Log.e(TAG, "fdefoejfnfo");
 				HttpPost httpPost = new HttpPost(url + "scan_nfc?nfc_id="
 						+ id_string);
-				Log.e(TAG, "post");
 				HttpResponse httpresponse = httpclient.execute(httpPost);
 				HttpEntity httpentity = httpresponse.getEntity();
 				if (httpentity != null) {
@@ -199,7 +194,7 @@ public class InformationProduitActivity extends MenuActivity {
 	}
 
 	/* Appel au WebService */
-	public void afficheListeMagasins() {
+	public void afficheInformationsProduit() {
 		new InformationProduitTask().execute(url + "scan_nfc?nfc_id="
 				+ id_string);
 	}

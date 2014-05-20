@@ -75,6 +75,10 @@
             android:name="application_commerciale.coursesnfc.InformationProduitActivity"
             android:label="@string/title_activity_information_produit" >
         </activity>
+        <activity
+            android:name="application_commerciale.coursesnfc.NFCActivity"
+            android:label="@string/title_activity_nfc" >
+        </activity>
     </application>
 
 </manifest>

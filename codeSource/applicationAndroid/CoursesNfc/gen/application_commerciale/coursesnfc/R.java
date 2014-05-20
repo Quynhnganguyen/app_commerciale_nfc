@@ -1265,8 +1265,9 @@ containing a value of this type.
         public static final int magasins=0x7f0c0007;
         public static final int main=0x7f0c0008;
         public static final int menu=0x7f0c0009;
-        public static final int test_nfc=0x7f0c000a;
-        public static final int test_w=0x7f0c000b;
+        public static final int nfc=0x7f0c000a;
+        public static final int test_nfc=0x7f0c000b;
+        public static final int test_w=0x7f0c000c;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1363,6 +1364,7 @@ containing a value of this type.
         public static final int title_activity_liste_noire=0x7f0a0015;
         public static final int title_activity_magasin=0x7f0a0013;
         public static final int title_activity_menu=0x7f0a0016;
+        public static final int title_activity_nfc=0x7f0a0049;
         public static final int title_activity_test_nfc=0x7f0a0032;
         public static final int title_section1=0x7f0a0010;
         public static final int title_section2=0x7f0a0011;
