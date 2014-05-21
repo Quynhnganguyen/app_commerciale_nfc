@@ -143,9 +143,14 @@ public class ConnexionActivity extends Activity {
 			} else if (messageRecupere.equals("Login success")) {
 				Toast.makeText(ConnexionActivity.this, "Connexion ",
 						Toast.LENGTH_LONG).show();
+				intent = new Intent(ConnexionActivity.this, MenuActivity.class);
+				intent.putExtra(ID_CLIENT,idRecupere);
+				startActivity(intent);
 				intent = new Intent(ConnexionActivity.this, AccueilActivity.class);
 				intent.putExtra(ID_CLIENT,idRecupere);
 				startActivity(intent);
+				
+				
 			}
 		}
 	}
@@ -157,4 +162,10 @@ public class ConnexionActivity extends Activity {
 				+ motDePasse.getText());
 	}
 
+	@Override  
+	public void onBackPressed() {
+	    super.onBackPressed();   
+	    finish();
+	    startActivity(getIntent());
+	}
 }
