@@ -1,0 +1,147 @@
+package application_commerciale.coursesnfc;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+public class MagasinActivity extends MenuActivity {
+	/* Attributs pour l'interface graphique */
+	private ListView listeViewMagasins;
+	private String[][] lesMagasins;
+	private List<HashMap<String, String>> listeMagasins;
+	private ListAdapter adapter;
+	
+	/* Attributs pour Intent */
+	Intent intentEnvoye;
+	private final String ID_MAGASIN = "id_magasin";
+
+	/* Attributs pour la connexion avec le WebService */
+	public static final String TAG = "TAG_MAGASINS";
+	private String url = "http://quiet-wildwood-3463.herokuapp.com/api/clients/";
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_magasin);
+
+		listeViewMagasins = (ListView) findViewById(R.id.listeMagasins);
+		listeViewMagasins.setChoiceMode(ListView.CHOICE_MODE_NONE);
+		listeMagasins = new ArrayList<HashMap<String, String>>();
+		afficheListeMagasins();
+
+		listViewMagasins.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			public void onItemClick(AdapterView<?> adapterView, View view,
+					int position, long id) {
+				intentEnvoye = new Intent(MagasinActivity.this,ListeProduitsActivity.class);
+				intentEnvoye.putExtra(ID_MAGASIN,intentRecu.getStringExtra(ID_MAGASIN));
+				startActivity(intentEnvoye);
+				HashMap<String, String> elt = list.get(position);
+				String nameOfContact = elt.get("text1").toString();
+	            String mailOfContact = elt.get("text2").toString();
+				intentOnItem.putExtra(CONTACT,nameOfContact);
+				intentOnItem.putExtra(MAIL, mailOfContact);
+				startActivity(intentOnItem);
+			}
+		});
+	}
+
+	private class MagasinTask extends AsyncTask<String, Void, String> {
+		private String response = "";
+
+		@Override
+		protected String doInBackground(String... urls) {
+			response = recupererLesMagasins();
+			return response;
+		}
+
+		public String recupererLesMagasins() {
+			response = "Ca ne marche pas...";
+			HttpClient httpclient = new DefaultHttpClient();
+			try {
+				HttpGet httpGet = new HttpGet(url + "liste_magasins");
+				HttpResponse httpresponse = httpclient.execute(httpGet);
+				HttpEntity httpentity = httpresponse.getEntity();
+				if (httpentity != null) {
+					InputStream inputstream = httpentity.getContent();
+					BufferedReader bufferedreader = new BufferedReader(
+							new InputStreamReader(inputstream));
+					StringBuilder stringBuilder = new StringBuilder();
+					String ligne = bufferedreader.readLine();
+					while (ligne != null) {
+						stringBuilder.append(ligne + "n");
+						ligne = bufferedreader.readLine();
+					}
+					bufferedreader.close();
+
+					JSONArray jSonArray = new JSONArray(
+							stringBuilder.toString());
+					lesMagasins = new String[jSonArray.length()][3];
+					for (int i = 0; i < jSonArray.length(); i++) {
+						JSONObject jSonObject = jSonArray.optJSONObject(i);
+						String nom = jSonObject.getString("magasin_nom");
+						String adresse = jSonObject
+								.getString("magasin_adresse");
+						String id = jSonObject.getString("magasin_id");
+						lesMagasins[i][0] = nom;
+						lesMagasins[i][1] = adresse;
+						lesMagasins[i][2] = id;
+					}
+
+					response = "Données récupérées";
+				}
+			} catch (Exception e) {
+				Log.e(TAG, e.getMessage());
+			}
+			return response;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			if (result.equals("Données récupérées")) {
+				HashMap<String, String> unMagasin;
+
+				for (int i = 0; i < lesMagasins.length; i++) {
+
+					unMagasin = new HashMap<String, String>();
+
+					unMagasin.put("nom", lesMagasins[i][0]);
+
+					unMagasin.put("adresse", lesMagasins[i][1]);
+					listeMagasins.add(unMagasin);
+				}
+
+				adapter = new SimpleAdapter(getApplicationContext(),
+						listeMagasins, android.R.layout.simple_list_item_2,
+						new String[] { "nom", "adresse" }, new int[] {
+								android.R.id.nom, android.R.id.adresse });
+				listeViewMagasins.setAdapter(adapter);
+
+			} else {
+				Log.e(TAG, "Ca ne marche pas");
+			}
+		}
+	}
+
+	public void afficheListeMagasins() {
+		new MagasinTask().execute(url + "liste_magasins");
+	}
+}

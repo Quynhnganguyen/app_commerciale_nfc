@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="13" version="2.0">
+<workbenchAdvisor/>
+<window height="744" maximized="true" width="1024" x="65" y="24">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="144" y="30"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="156" y="30"/>
+<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="88" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="124" y="30"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="232" y="30"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1400590995357" focus="true" label="Workspace - Resource">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="AndroidManifest.xml" partName="AndroidManifest.xml" path="/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/CoursesNfc/AndroidManifest.xml" title="AndroidManifest.xml" tooltip="CoursesNfc/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CoursesNfc/AndroidManifest.xml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComparaisonActivity.java" partName="ComparaisonActivity.java" path="/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/CoursesNfc/src/application_commerciale/coursesnfc/ComparaisonActivity.java" title="ComparaisonActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/ComparaisonActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CoursesNfc/src/application_commerciale/coursesnfc/ComparaisonActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="2696"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MagasinActivity.java" partName="MagasinActivity.java" path="/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/CoursesNfc/src/application_commerciale/coursesnfc/MagasinActivity.java" title="MagasinActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/MagasinActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CoursesNfc/src/application_commerciale/coursesnfc/MagasinActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1930" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ListeProduitsMagasin.java" partName="ListeProduitsMagasin.java" path="/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/CoursesNfc/src/application_commerciale/coursesnfc/ListeProduitsMagasin.java" title="ListeProduitsMagasin.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/ListeProduitsMagasin.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CoursesNfc/src/application_commerciale/coursesnfc/ListeProduitsMagasin.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="945" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="activity_magasin.xml" partName="activity_magasin.xml" path="/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/CoursesNfc/res/layout/activity_magasin.xml" title="activity_magasin.xml" tooltip="CoursesNfc/res/layout/activity_magasin.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CoursesNfc/res/layout/activity_magasin.xml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="760" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AccueilActivity.java" partName="AccueilActivity.java" path="/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/CoursesNfc/src/application_commerciale/coursesnfc/AccueilActivity.java" title="AccueilActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/AccueilActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CoursesNfc/src/application_commerciale/coursesnfc/AccueilActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1746" selectionTopPixel="431"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnexionActivity.java" partName="ConnexionActivity.java" path="/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/CoursesNfc/src/application_commerciale/coursesnfc/ConnexionActivity.java" title="ConnexionActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/ConnexionActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CoursesNfc/src/application_commerciale/coursesnfc/ConnexionActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="40" selectionOffset="3732" selectionTopPixel="1754"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ListeNoireActivity.java" partName="ListeNoireActivity.java" path="/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/CoursesNfc/src/application_commerciale/coursesnfc/ListeNoireActivity.java" title="ListeNoireActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/ListeNoireActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CoursesNfc/src/application_commerciale/coursesnfc/ListeNoireActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionActivity.java" partName="InscriptionActivity.java" path="/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/CoursesNfc/src/application_commerciale/coursesnfc/InscriptionActivity.java" title="InscriptionActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/InscriptionActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/CoursesNfc/src/application_commerciale/coursesnfc/InscriptionActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="org.eclipse.ui.resourcePerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<fastViewBars>
+<fastViewBar fastViewLocation="16384" id="bottomLeft" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
+<fastViews>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@589fe82f" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.26353502" ratioLeft="331" ratioRight="925" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.6596434" ratioLeft="407" ratioRight="210" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.49918962" ratioLeft="308" ratioRight="309" relationship="4" relative="topLeft">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CoursesNfc/src/application_commerciale/coursesnfc/MagasinActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/CoursesNfc/res/layout/activity_magasin.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CoursesNfc/src/application_commerciale/coursesnfc/AccueilActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/CoursesNfc/res/layout/activity_accueil.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CoursesNfc/src/application_commerciale/coursesnfc/FavorisActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CoursesNfc/src/application_commerciale/coursesnfc/ListeProduitsMagasin.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CoursesNfc/src/application_commerciale/coursesnfc/ListeNoireActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/CoursesNfc/res/layout/activity_liste_produits_magasin.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/CoursesNfc/res/layout/activity_menu.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CoursesNfc/src/application_commerciale/coursesnfc/AccueilActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CoursesNfc/src/application_commerciale/coursesnfc/ConnexionActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/CoursesNfc/src/application_commerciale/coursesnfc/InscriptionActivity.java"/>
+</editors>
+<item historyLabel="ListeProduitsMagasin.java" index="5">
+<position info="not_deleted" x="4207" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="961" y="12"/>
+</item>
+<item historyLabel="AccueilActivity.java" index="2">
+<position info="not_deleted" x="664" y="20"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position/>
+</item>
+<item historyLabel="activity_magasin.xml" index="1">
+<position info="not_deleted" x="277" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="1602" y="0"/>
+</item>
+<item historyLabel="ListeProduitsMagasin.java" index="5">
+<position info="not_deleted" x="4207" y="0"/>
+</item>
+<item historyLabel="activity_magasin.xml" index="1">
+<position info="not_deleted" x="277" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="1656" y="0"/>
+</item>
+<item historyLabel="activity_accueil.xml" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="1656" y="0"/>
+</item>
+<item historyLabel="activity_magasin.xml" index="1">
+<position info="not_deleted" x="277" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="1656" y="0"/>
+</item>
+<item historyLabel="FavorisActivity.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="activity_magasin.xml" index="1">
+<position info="not_deleted" x="760" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="3434" y="0"/>
+</item>
+<item historyLabel="activity_magasin.xml" index="1">
+<position info="not_deleted" x="760" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="3434" y="0"/>
+</item>
+<item historyLabel="FavorisActivity.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="3434" y="0"/>
+</item>
+<item historyLabel="ListeProduitsMagasin.java" index="5">
+<position info="not_deleted" x="4207" y="0"/>
+</item>
+<item historyLabel="activity_liste_produits_magasin.xml" index="7">
+<position info="not_deleted" x="284" y="0"/>
+</item>
+<item historyLabel="ListeProduitsMagasin.java" index="5">
+<position info="not_deleted" x="4207" y="0"/>
+</item>
+<item historyLabel="activity_magasin.xml" index="1">
+<position info="not_deleted" x="760" y="0"/>
+</item>
+<item historyLabel="activity_menu.xml" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="activity_magasin.xml" index="1">
+<position info="not_deleted" x="760" y="0"/>
+</item>
+<item historyLabel="AccueilActivity.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position/>
+</item>
+<item historyLabel="AccueilActivity.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position/>
+</item>
+<item historyLabel="ListeProduitsMagasin.java" index="5">
+<position info="not_deleted" x="717" y="21"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position/>
+</item>
+<item historyLabel="ListeProduitsMagasin.java" index="5">
+<position info="not_deleted" x="717" y="21"/>
+</item>
+<item historyLabel="activity_magasin.xml" index="1">
+<position info="not_deleted" x="760" y="0"/>
+</item>
+<item historyLabel="AccueilActivity.java" index="9">
+<position info="not_deleted" x="1702" y="180"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="1804" y="15"/>
+</item>
+<item historyLabel="ListeProduitsMagasin.java" index="5">
+<position info="not_deleted" x="717" y="21"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="1825" y="0"/>
+</item>
+<item historyLabel="ListeProduitsMagasin.java" index="5">
+<position info="not_deleted" x="717" y="21"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position/>
+</item>
+<item historyLabel="AccueilActivity.java" index="9">
+<position info="not_deleted" x="1746" y="0"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position/>
+</item>
+<item historyLabel="AccueilActivity.java" index="9">
+<position info="not_deleted" x="1746" y="0"/>
+</item>
+<item historyLabel="ConnexionActivity.java" index="10">
+<position info="not_deleted" x="3732" y="40"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position/>
+</item>
+<item historyLabel="ConnexionActivity.java" index="10">
+<position info="not_deleted" x="3732" y="40"/>
+</item>
+<item historyLabel="MagasinActivity.java" index="0">
+<position info="not_deleted" x="1930" y="0"/>
+</item>
+<item historyLabel="ListeProduitsMagasin.java" index="5">
+<position info="not_deleted" x="945" y="0"/>
+</item>
+<item historyLabel="ListeNoireActivity.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="InscriptionActivity.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="bottomLeft"/>
+</trimArea>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InscriptionActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/InscriptionActivity.java">
+<persistable path="/CoursesNfc/src/application_commerciale/coursesnfc/InscriptionActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ListeNoireActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/ListeNoireActivity.java">
+<persistable path="/CoursesNfc/src/application_commerciale/coursesnfc/ListeNoireActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnexionActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/ConnexionActivity.java">
+<persistable path="/CoursesNfc/src/application_commerciale/coursesnfc/ConnexionActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AccueilActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/AccueilActivity.java">
+<persistable path="/CoursesNfc/src/application_commerciale/coursesnfc/AccueilActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="activity_menu.xml" tooltip="CoursesNfc/res/layout/activity_menu.xml">
+<persistable path="/CoursesNfc/res/layout/activity_menu.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="activity_magasin.xml" tooltip="CoursesNfc/res/layout/activity_magasin.xml">
+<persistable path="/CoursesNfc/res/layout/activity_magasin.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="activity_liste_noire.xml" tooltip="CoursesNfc/res/layout/activity_liste_noire.xml">
+<persistable path="/CoursesNfc/res/layout/activity_liste_noire.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="activity_liste_produits_magasin.xml" tooltip="CoursesNfc/res/layout/activity_liste_produits_magasin.xml">
+<persistable path="/CoursesNfc/res/layout/activity_liste_produits_magasin.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ListeProduitsMagasin.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/ListeProduitsMagasin.java">
+<persistable path="/CoursesNfc/src/application_commerciale/coursesnfc/ListeProduitsMagasin.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FavorisActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/FavorisActivity.java">
+<persistable path="/CoursesNfc/src/application_commerciale/coursesnfc/FavorisActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="activity_information_produit.xml" tooltip="CoursesNfc/res/layout/activity_information_produit.xml">
+<persistable path="/CoursesNfc/res/layout/activity_information_produit.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="activity_accueil.xml" tooltip="CoursesNfc/res/layout/activity_accueil.xml">
+<persistable path="/CoursesNfc/res/layout/activity_accueil.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MagasinActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/MagasinActivity.java">
+<persistable path="/CoursesNfc/src/application_commerciale/coursesnfc/MagasinActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MenuActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/MenuActivity.java">
+<persistable path="/CoursesNfc/src/application_commerciale/coursesnfc/MenuActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ComparaisonActivity.java" tooltip="CoursesNfc/src/application_commerciale/coursesnfc/ComparaisonActivity.java">
+<persistable path="/CoursesNfc/src/application_commerciale/coursesnfc/ComparaisonActivity.java"/>
+</file>
+</mruList>
+</workbench>

@@ -1,0 +1,2 @@
+INDEX VERSION 1.126+/home/nga/WORKING/app_commerciale/codeSource/applicationAndroid/.metadata/.plugins/org.eclipse.jdt.core
+788902644.index
