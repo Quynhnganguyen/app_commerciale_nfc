@@ -52,7 +52,7 @@ public class AccueilActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if (v.getId() == R.id.boutonProduitsAAcheter) {
-					intentEnvoye = new Intent(AccueilActivity.this,AccueilActivity.class);
+					intentEnvoye = new Intent(AccueilActivity.this,ProduitsAAcheterActivity.class);
 					intentEnvoye.putExtra(ID_CLIENT,intentRecu.getStringExtra(ID_CLIENT));
 					startActivity(intentEnvoye);
 				}
@@ -116,6 +116,13 @@ public class AccueilActivity extends Activity {
 			}
 
 		});
+	}
+	@Override  
+	public void onBackPressed() {
+	    super.onBackPressed();   
+	    intentEnvoye = new Intent(AccueilActivity.this,ConnexionActivity.class);
+		intentEnvoye.putExtra(ID_CLIENT,intentRecu.getStringExtra(ID_CLIENT));
+		startActivity(intentEnvoye);
 	}
 
 	

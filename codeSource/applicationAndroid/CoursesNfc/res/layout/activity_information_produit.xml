@@ -14,7 +14,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="70dp"
         android:layout_marginTop="10dp"
         android:text="@string/scannerProduit" />
@@ -139,7 +138,7 @@
         android:layout_marginBottom="5dp"
          android:layout_marginTop="20dp"
         android:text="@string/checkFavoris"
-        android:textColor="#8FCF3C" />
+        android:textColor="#FFFFFF" />
 
     <CheckBox
         android:id="@+id/checkListeNoire"

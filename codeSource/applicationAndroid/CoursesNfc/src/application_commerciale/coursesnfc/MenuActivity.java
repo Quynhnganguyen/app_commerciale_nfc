@@ -7,6 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MenuActivity extends Activity {
+	/* Attributs pour Intent */
+	Intent intentRecu;
+	private final String ID_CLIENT = "id_client";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,37 +30,47 @@ public class MenuActivity extends Activity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		Intent intent;
+		intentRecu=getIntent();
+		Intent intent; 
 		int id = item.getItemId();
 		switch (id) {
 		case R.id.item1:
 			intent = new Intent(MenuActivity.this,AccueilActivity.class);
+			intent.putExtra(ID_CLIENT, intentRecu.getStringExtra(ID_CLIENT));
 			startActivity(intent);
 			return true;
+			
 		case R.id.item2:
 			intent = new Intent(MenuActivity.this,MagasinActivity.class);
+			intent.putExtra(ID_CLIENT, intentRecu.getStringExtra(ID_CLIENT));
 			startActivity(intent);
 			return true;
 		case R.id.item3:
-			//intent = new Intent(MenuActivity.this,TestNfcActivity.class);
-			//startActivity(intent);
+			intent = new Intent(MenuActivity.this,ProduitsAAcheterActivity.class);
+			intent.putExtra(ID_CLIENT, intentRecu.getStringExtra(ID_CLIENT));
+			startActivity(intent);
 			return true;
 		case R.id.item4:
 			intent = new Intent(MenuActivity.this,FavorisActivity.class);
+			intent.putExtra(ID_CLIENT, intentRecu.getStringExtra(ID_CLIENT));
 			startActivity(intent);
 			return true;
 		case R.id.item5:
 			intent = new Intent(MenuActivity.this,ListeNoireActivity.class);
+			intent.putExtra(ID_CLIENT, intentRecu.getStringExtra(ID_CLIENT));
 			startActivity(intent);
 			return true;
 		case R.id.item6:
 			intent = new Intent(MenuActivity.this,InformationProduitActivity.class);
+			intent.putExtra(ID_CLIENT, intentRecu.getStringExtra(ID_CLIENT));
 			startActivity(intent);
 			return true;
 		case R.id.item7:
 			intent = new Intent(MenuActivity.this,ComparaisonActivity.class);
+			intent.putExtra(ID_CLIENT, intentRecu.getStringExtra(ID_CLIENT));
 			startActivity(intent);
 			return true;
+		
 		}
 
 		return super.onOptionsItemSelected(item);

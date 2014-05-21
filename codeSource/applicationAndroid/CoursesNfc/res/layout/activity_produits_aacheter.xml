@@ -1,0 +1,52 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#002F2F"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/scannerProduitAAcheter"
+        style="@style/texteImportant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:drawableBottom="#B9121B"
+        android:text="@string/scannerProduitAAcheter" />
+
+    <TextView
+        android:id="@+id/prixTotal"
+        style="@style/texteImportant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:drawableBottom="#B9121B"
+        android:text="@string/prixTotal"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/scannerProduitAAcheter" />
+
+    <ListView
+        android:id="@+id/listeAAcheter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prixTotal" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dip" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dip" >
+    </TextView>
+
+</RelativeLayout>

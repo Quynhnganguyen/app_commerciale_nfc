@@ -41,8 +41,9 @@ public class ListeProduitsActivity extends MenuActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		intentRecu = getIntent();
+		Log.e("df",intentRecu.getStringExtra(ID_MAGASIN));
 		setContentView(R.layout.activity_liste_produits_magasin);
-		listeViewProduitsMagasin = (ListView) findViewById(R.id.listeProduitsMagasin;
+		listeViewProduitsMagasin = (ListView) findViewById(R.id.listeProduitsMagasin);
 		listeViewProduitsMagasin.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
 		produitsMagasin = new ArrayList<HashMap<String, String>>();
@@ -110,16 +111,16 @@ public class ListeProduitsActivity extends MenuActivity {
 
 					unProduitMagasin = new HashMap<String, String>();
 
-					unProduitMagasin.put("nom", lesproduitsMagasin[i][0]);
+					unProduitMagasin.put("text1", lesproduitsMagasin[i][0]);
 
-					unProduitMagasin.put("prix", lesproduitsMagasin[i][1]);
+					unProduitMagasin.put("text2", lesproduitsMagasin[i][1]);
 					produitsMagasin.add(unProduitMagasin);
 				}
 
 				adapter = new SimpleAdapter(getApplicationContext(), produitsMagasin,
-						android.R.layout.simple_list_item_2, new String[] { "nom",
-								"prix" }, new int[] { android.R.id.nom,
-								android.R.id.prix });
+						android.R.layout.simple_list_item_2, new String[] { "text1",
+								"text2" }, new int[] { android.R.id.text1,
+								android.R.id.text2 });
 				listeViewProduitsMagasin.setAdapter(adapter);
 
 
@@ -129,7 +130,7 @@ public class ListeProduitsActivity extends MenuActivity {
 		}
 	}
 
-	public void afficheListeNoire() {
+	public void afficheProduitsMagasin() {
 		new ProduitsMagasinTask().execute(url + "produits_magasin?magasin_id="
 				+ intentRecu.getStringExtra(ID_MAGASIN));
 	}

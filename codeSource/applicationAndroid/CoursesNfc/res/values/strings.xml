@@ -13,6 +13,8 @@
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_inscription">Inscription</string>
     <string name="title_activity_comparaison">Comparer deux Produits</string>
+    <string name="title_activity_liste_produits">Liste des produits</string>
+    <string name="title_activity_produits_aacheter">Liste produits à acheter</string>
     <string name="menuAccueil">Accueil</string>
     <string name="menuMagasins">Liste des magasins</string>
     <string name="menuProduitsAAcheter">Produits à acheter</string>
@@ -35,10 +37,9 @@
     <string name="produit2">Produit 2</string>
     <string name="propositionDeScannerProduit">Scannez le premier produit</string>
     <string name="propositionDeScannerProduit2">Scannez le deuxième produit</string>
-    <string name="meilleurProduit">Le meilleur produit est %s</string>
+    <string name="meilleurProduit"></string>
     <string name="boutonComparaison">Comparer</string>
     <string name="boutonAcheterMeilleurProduit">Acheter le meilleur produit</string>
-    <string name="title_activity_test_nfc">TestNfcActivity</string>
     <string name="title_activity_information_produit">Informations Produit</string>
     <string name="checkFavoris"> Ajouter dans liste favoris</string>
     <string name="checkListeNoire"> Ajouter dans liste Noire</string>
@@ -61,6 +62,7 @@
     <string name="boutonScannerProduit">Scanner produit</string>
     <string name="boutonComparerDeuxProduits">Comparer deux produits</string>
     <string name="texteDeBienvenue">Bienvenue sur Achat Rapide NFC!</string>
-    <string name="title_activity_nfc">NFCActivity</string>
+    <string name="scannerProduitAAcheter">Scannez un produit à acheter!</string>
+    <string name="prixTotal">Total: %1$.2f</string>
 
 </resources>

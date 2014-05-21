@@ -55,11 +55,11 @@ public class ListeNoireActivity extends MenuActivity {
 
 		@Override
 		protected String doInBackground(String... urls) {
-			response = recupererProduitsFavoris();
+			response = recupererProduitsNoirs();
 			return response;
 		}
 
-		public String recupererProduitsFavoris() {
+		public String recupererProduitsNoirs() {
 			response = "Ca ne marche pas...";
 			HttpClient httpclient = new DefaultHttpClient();
 			try {
